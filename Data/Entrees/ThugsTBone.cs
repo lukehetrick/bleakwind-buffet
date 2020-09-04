@@ -27,7 +27,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// no properties so always returns empty list
         /// </summary>
-        public List<string> SpecialInstrucitons
+        public List<string> SpecialInstructions
         {
             get
             {

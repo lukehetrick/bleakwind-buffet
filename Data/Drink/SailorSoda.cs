@@ -59,22 +59,22 @@ namespace BleakwindBuffet.Data.Drinks
         /// provides the get and set values for the calories of the soda.
         /// depends on size of drink
         /// </summary>
-        private uint calorie;
-        public uint Calorie
+        private uint calories;
+        public uint Calories
         {
-            get => calorie;
+            get => calories;
             set
             {
                 switch (size)
                 {
                     case Size.Small:
-                        calorie = 117;
+                        calories = 117;
                         break;
                     case Size.Medium:
-                        calorie = 153;
+                        calories = 153;
                         break;
                     case Size.Large:
-                        calorie = 205;
+                        calories = 205;
                         break;
                 }
             }
@@ -88,7 +88,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// sends special instructions based on ice property
         /// </summary>
-        public List<string> SpecialInstrucitons
+        public List<string> SpecialInstructions
         {
             get
             {

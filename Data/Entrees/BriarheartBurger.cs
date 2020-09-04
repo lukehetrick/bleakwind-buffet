@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Luke Hetrick
- * Class name: ThalmoreTriple.cs
- * Purpose: Class used to represent the TripleThalmor burger on the menu
+ * Class name: BriarHeartBurger.cs
+ * Purpose: Class used to represent the BriarheartBurger on the menu
  */
 
 using System;
@@ -10,20 +10,20 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThalmoreTriple
+    public class BriarheartBurger
     {
         /// <summary>
         /// price of the burger
         /// </summary>
         public double Price
         {
-            get { return 8.32; }
+            get { return 6.32; }
         }
 
         /// <summary>
-        /// number of calories in the burger        //I was experimenting with the different get/set options
+        /// number of calories in the burger
         /// </summary>
-        public uint Calories => 943;
+        public uint Calories => 742;
 
 
         /// <summary>
@@ -65,35 +65,9 @@ namespace BleakwindBuffet.Data.Entrees
 
 
         /// <summary>
-        /// Tomato value, default true
-        /// </summary>
-        public bool Tomato { get; set; } = true;
-
-        /// <summary>
-        /// Lettuce value, default true
-        /// </summary>        
-        public bool Lettuce { get; set; } = true;
-
-        /// <summary>
-        /// Mayo value, default true
-        /// </summary>
-        public bool Mayo { get; set; } = true;
-
-        /// <summary>
-        /// Bacon value, default true
-        /// </summary>
-        public bool Bacon { get; set; } = true;
-
-        /// <summary>
-        /// Egg value, default true
-        /// </summary>
-        public bool Egg { get; set; } = true;
-
-
-        /// <summary>
         /// gets by creating new list based on the bool variables above
         /// </summary>
-        public List<string> SpecialInstrucitons
+        public List<string> SpecialInstructions
         {
             get
             {
@@ -103,12 +77,6 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!Mustard) instructions.Add("Hold mustard");
                 if (!Pickle) instructions.Add("Hold pickle");
                 if (!Cheese) instructions.Add("Hold cheese");
-                if (!Tomato) instructions.Add("Hold tomato");
-                if (!Lettuce) instructions.Add("Hold lettuce");
-                if (!Mayo) instructions.Add("Hold mayo");
-                if (!Bacon) instructions.Add("Hold bacon");
-                if (!Egg) instructions.Add("Hold egg");
-
                 return instructions;
             }
         }
@@ -119,7 +87,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <returns></returns>
         public override string ToString()
         {
-            return "Thalmore Triple";
+            return "Briarheart Burger";
         }
     }
 }

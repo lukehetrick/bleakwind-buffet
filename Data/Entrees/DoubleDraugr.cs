@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Luke Hetrick
- * Class name: BriarHeartBurger.cs
- * Purpose: Class used to represent the BriarheartBurger on the menu
+ * Class name: DoubleDraugr.cs
+ * Purpose: Class used to represent the DoubleDraugr burger on the menu
  */
 
 using System;
@@ -10,20 +10,20 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger
+    public class DoubleDraugr
     {
         /// <summary>
         /// price of the burger
         /// </summary>
         public double Price
         {
-            get { return 6.32; }
+            get { return 7.32; }
         }
 
         /// <summary>
-        /// number of calories in the burger
+        /// number of calories in the burger        //I was experimenting with the different get/set options
         /// </summary>
-        public uint Calories => 742;
+        public uint Calories => 843;
 
 
         /// <summary>
@@ -65,19 +65,39 @@ namespace BleakwindBuffet.Data.Entrees
 
 
         /// <summary>
+        /// Tomato value, default true
+        /// </summary>
+        public bool Tomato { get; set; } = true;
+
+        /// <summary>
+        /// Lettuce value, default true
+        /// </summary>        
+        public bool Lettuce { get; set; } = true;
+        
+        /// <summary>
+        /// Mayo value, default true
+        /// </summary>
+        public bool Mayo { get; set; } = true;
+
+
+        /// <summary>
         /// gets by creating new list based on the bool variables above
         /// </summary>
-        public List<string> SpecialInstrucitons
+        public List<string> SpecialInstructions
         {
             get
             {
-                List<string> instrucitons = new List<string>();
-                if (!Bun) instrucitons.Add("Hold bun");
-                if (!Ketchup) instrucitons.Add("Hold ketchup");
-                if (!Mustard) instrucitons.Add("Hold mustard");
-                if (!Pickle) instrucitons.Add("Hold pickle");
-                if (!Cheese) instrucitons.Add("Hold cheese");
-                return instrucitons;
+                List<string> instructions = new List<string>();
+                if (!Bun) instructions.Add("Hold bun");
+                if (!Ketchup) instructions.Add("Hold ketchup");
+                if (!Mustard) instructions.Add("Hold mustard");
+                if (!Pickle) instructions.Add("Hold pickle");
+                if (!Cheese) instructions.Add("Hold cheese");
+                if (!Tomato) instructions.Add("Hold tomato");
+                if (!Lettuce) instructions.Add("Hold lettuce");
+                if (!Mayo) instructions.Add("Hold mayo");
+
+                return instructions;
             }
         }
 
@@ -87,7 +107,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <returns></returns>
         public override string ToString()
         {
-            return "Briarheart Burger";
+            return "Double Dragr";
         }
     }
 }

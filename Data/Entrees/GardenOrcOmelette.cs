@@ -47,7 +47,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// gets by creating new list based on the bool variables above
         /// </summary>
-        public List<string> SpecialInstrucitons
+        public List<string> SpecialInstructions
         {
             get
             {

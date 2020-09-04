@@ -51,22 +51,22 @@ namespace BleakwindBuffet.Data.Sides
         /// provides the get and set values for the calories of the salad.
         /// depends on the size
         /// </summary>
-        private uint calorie;
-        public uint Calorie
+        private uint calories;
+        public uint Calories
         {
-            get => calorie;
+            get => calories;
             set
             {
                 switch (size)
                 {
                     case Size.Small:
-                        calorie = 41;
+                        calories = 41;
                         break;
                     case Size.Medium:
-                        calorie = 52;
+                        calories = 52;
                         break;
                     case Size.Large:
-                        calorie = 73;
+                        calories = 73;
                         break;
                 }
             }
@@ -75,7 +75,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// no properties so always returns empty list
         /// </summary>
-        public List<string> SpecialInstrucitons
+        public List<string> SpecialInstructions
         {
             get
             {
