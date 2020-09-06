@@ -9,12 +9,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class that represents Arentino Apple juice
+    /// </summary>
     public class ArentinoAppleJuice
     {
 
-        /// <summary>
+        /// <value>
         /// gets and sets the size of the drink. default Small
-        /// </summary>
+        /// </value>
         private Size size = Size.Small;
         public Size Size
         {
@@ -22,10 +25,10 @@ namespace BleakwindBuffet.Data.Drinks
             set { size = value; }
         }
 
-        /// <summary>
+        /// <value>
         /// the get for the price of the drink
         /// depends on size of drink
-        /// </summary>
+        /// </value>
         private double price;
         public double Price
         {
@@ -47,10 +50,10 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// provides the get and set values for the calories of the drink.
         /// depends on size of drink
-        /// </summary>
+        /// </value>
         private uint calories;
         public uint Calories
         {
@@ -73,14 +76,14 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
-        /// <summary>
+        /// <value>
         /// ice value of the drink, default false
-        /// </summary>
+        /// </value>
         public bool Ice { get; set; } = false;
 
-        /// <summary>
+        /// <value>
         /// gets instruction list based on ice request
-        /// </summary>
+        /// </value>        
         public List<string> SpecialInstructions
         {
             get
@@ -95,7 +98,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// sends the description of this drink based on size
         /// </summary>
-        /// <returns></returns>
+        /// <returns>size and label of drink</returns>
         public override string ToString()
         {
             return size.ToString() + " Arentino Apple Juice";

@@ -9,12 +9,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class to contain Candle hearth coffee
+    /// </summary>
     public class CandlehearthCoffee
     {
 
-        /// <summary>
+        /// <value>
         /// gets and sets the size of the drink. default Small
-        /// </summary>
+        /// </value>
         private Size size = Size.Small;
         public Size Size
         {
@@ -22,10 +25,10 @@ namespace BleakwindBuffet.Data.Drinks
             set { size = value; }
         }
 
-        /// <summary>
+        /// <value>
         /// the get for the price of the drink
         /// depends on size of drink
-        /// </summary>
+        /// </value>
         private double price;
         public double Price
         {
@@ -47,10 +50,10 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// provides the get and set values for the calories of the drink.
         /// depends on size of drink
-        /// </summary>
+        /// </value>
         private uint calories;
         public uint Calories
         {
@@ -73,24 +76,24 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
-        /// <summary>
+        /// <value>
         /// ice value of the drink, default false
-        /// </summary>
+        /// </value>
         public bool Ice { get; set; } = false;
 
-        /// <summary>
+        /// <value>
         /// value for room for cream in the coffee, default false
-        /// </summary>
+        /// </value>
         public bool RoomForCream { get; set; } = false;
 
-        /// <summary>
+        /// <value>
         /// value for decaf coffee, default false
-        /// </summary>
+        /// </value>
         public bool Decaf { get; set; } = false;
 
-        /// <summary>
+        /// <value>
         /// gets instruction list based on ice and cream variables
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -106,7 +109,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// sends the description of this drink based on size and caffine
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string with label for decaf and size of drink</returns>
         public override string ToString()
         {
             if(Decaf)

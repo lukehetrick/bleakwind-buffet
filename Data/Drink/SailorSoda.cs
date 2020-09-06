@@ -9,12 +9,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// class that defines the Sailor Soda object
+    /// </summary>
     public class SailorSoda
     {
 
-        /// <summary>
+        /// <value>
         /// gets and sets the size of the drink. default Small
-        /// </summary>
+        /// </value>
         private Size size = Size.Small;
         public Size Size
         {
