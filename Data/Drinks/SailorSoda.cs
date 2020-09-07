@@ -25,6 +25,9 @@ namespace BleakwindBuffet.Data.Drinks
             set { size = value; }
         }
 
+        /// <value>
+        /// value for the flavor of drink, default Cherry
+        /// </value>
         private SodaFlavor flavor = SodaFlavor.Cherry;
         public SodaFlavor Flavor
         {
@@ -32,65 +35,52 @@ namespace BleakwindBuffet.Data.Drinks
             set { flavor = value; }
         }
 
-        /// <summary>
+        /// <value>
         /// the get for the price of the drink
         /// depends on size of drink
-        /// </summary>
-        private double price;
+        /// </value>
         public double Price
         {
-            get => price;
-            set
+            get
             {
-                switch(size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        price = 1.42;
-                        break;
-                    case Size.Medium:
-                        price = 1.74;
-                        break;
-                    case Size.Large:
-                        price = 2.07;
-                        break;
+                    case Size.Small: return 1.42;
+                    case Size.Medium: return 1.74;
+                    case Size.Large: return 2.07;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
 
-        /// <summary>
+        /// <value>
         /// provides the get and set values for the calories of the soda.
         /// depends on size of drink
-        /// </summary>
-        private uint calories;
+        /// </value>
+
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        calories = 117;
-                        break;
-                    case Size.Medium:
-                        calories = 153;
-                        break;
-                    case Size.Large:
-                        calories = 205;
-                        break;
+                    case Size.Small: return 117;
+                    case Size.Medium: return 153;
+                    case Size.Large: return 205;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
-        
-        /// <summary>
+
+        /// <value>
         /// ice value of the drink, default true
-        /// </summary>
+        /// </value>
         public bool Ice { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// sends special instructions based on ice property
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -102,13 +92,10 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
-        
-
-
         /// <summary>
         /// sends the description of this drink based on size and flavor
         /// </summary>
-        /// <returns></returns>
+        /// <returns>description of drink including size and flavor</returns>
         public override string ToString()
         {
             return size.ToString() + " " + flavor.ToString() + " Sailor Soda";

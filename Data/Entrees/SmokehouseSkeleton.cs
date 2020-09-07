@@ -7,46 +7,47 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class to define the Smokehouse skeleton breakfast combo
+    /// </summary>
     public class SmokehouseSkeleton
     {
 
-        /// <summary>
+        /// <value>
         /// price of the combo
-        /// </summary>
+        /// </value>
         public double Price => 5.62;
 
-        /// <summary>
+        /// <value>
         /// number of calories in the combo      
-        /// </summary>
+        /// </value>
         public uint Calories => 602;
 
-        /// <summary>
+        /// <value>
         /// Sasauge link value, default true
-        /// </summary>
+        /// </value>
         public bool SausageLink { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Egg value, default true
-        /// </summary>
+        /// </value>
         public bool Egg { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// HashBrowns value, default true
-        /// </summary>
+        /// </value>
         public bool HashBrowns { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Pancake value, default true
-        /// </summary>
+        /// </value>
         public bool Pancake { get; set; } = true;
 
-
-        /// <summary>
+        /// <value>
         /// gets by creating new list based on the bool variables above
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -65,7 +66,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// sends the name of the combo to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name fo the combo: "Smokehouse Skeleton"</returns>
         public override string ToString()
         {
             return "Smokehouse Skeleton";

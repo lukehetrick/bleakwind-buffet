@@ -10,25 +10,28 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for briarheart burger
+    /// </summary>
     public class BriarheartBurger
     {
-        /// <summary>
+        /// <value>
         /// price of the burger
-        /// </summary>
+        /// </value>
         public double Price
         {
             get { return 6.32; }
         }
 
-        /// <summary>
+        /// <value>
         /// number of calories in the burger
-        /// </summary>
-        public uint Calories => 742;
+        /// </value>
+        public uint Calories => 743;
 
 
-        /// <summary>
+        /// <value>
         /// bun get and set value, default true
-        /// </summary>
+        /// </value>
         private bool bun = true;
         public bool Bun
         {
@@ -42,31 +45,31 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// ketchup value, default true
-        /// </summary>
+        /// </value>
         public bool Ketchup { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Mustard value, default true
-        /// </summary>
+        /// </value>
         public bool Mustard { get; set; } = true;
 
 
-        /// <summary>
+        /// <value>
         /// Pickle value, default true
-        /// </summary>
+        /// </value>
         public bool Pickle { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Cheese value, default true
-        /// </summary>
+        /// </value>
         public bool Cheese { get; set; } = true;
 
 
-        /// <summary>
+        /// <value>
         /// gets by creating new list based on the bool variables above
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -84,7 +87,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// sends the name of the burger to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name of burger: "Briarheart Burger"</returns>
         public override string ToString()
         {
             return "Briarheart Burger";

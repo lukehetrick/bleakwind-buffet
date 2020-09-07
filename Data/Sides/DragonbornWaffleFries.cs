@@ -9,12 +9,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// class to define the Dragonborn Waffle fries
+    /// </summary>
     public class DragonbornWaffleFries
     {
 
-        /// <summary>
+        /// <value>
         /// gets and sets the size of the fries. default Small
-        /// </summary>
+        /// </value>
         private Size size = Size.Small;
         public Size Size
         {
@@ -22,59 +25,45 @@ namespace BleakwindBuffet.Data.Sides
             set { size = value; }
         }
 
-        /// <summary>
+        /// <value>
         /// the get for the price of the fries
         /// depends on the size
-        /// </summary>
-        private double price;
+        /// </value>
         public double Price
         {
-            get => price;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        price = .42;
-                        break;
-                    case Size.Medium:
-                        price = .76;
-                        break;
-                    case Size.Large:
-                        price = .96;
-                        break;
+                    case Size.Small: return 0.42;
+                    case Size.Medium: return 0.76;
+                    case Size.Large: return 0.96;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
-        /// <summary>
+        /// <value>
         /// provides the get and set values for the calories of the grits.
         /// depends on the size
-        /// </summary>
-        private uint calories;
+        /// </value>
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        calories = 77;
-                        break;
-                    case Size.Medium:
-                        calories = 89;
-                        break;
-                    case Size.Large:
-                        calories = 100;
-                        break;
+                    case Size.Small: return 77;
+                    case Size.Medium: return 89;
+                    case Size.Large: return 100;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
-        /// <summary>
+        /// <value>
         /// no properties so always returns empty list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -88,7 +77,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// sends the description of the fries based on size
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name of fries and size</returns>
         public override string ToString()
         {
             return size.ToString() + " Dragonborn Waffle Fries";

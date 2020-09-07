@@ -9,12 +9,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drink
 {
+    /// <summary>
+    /// class to define warrior water object
+    /// </summary>
     public class WarriorWater
     {
 
-        /// <summary>
+        /// <value>
         /// gets and sets the size of the drink. default Small
-        /// </summary>
+        /// </value>
         private Size size = Size.Small;
         public Size Size
         {
@@ -22,76 +25,62 @@ namespace BleakwindBuffet.Data.Drink
             set { size = value; }
         }
 
-        /// <summary>
+        /// <value>
         /// the get for the price of the drink
         /// free for all sizes
-        /// </summary>
-        private double price;
+        /// </value>
         public double Price
         {
-            get => price;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        price = 0;
-                        break;
-                    case Size.Medium:
-                        price = 0;
-                        break;
-                    case Size.Large:
-                        price = 0;
-                        break;
+                    case Size.Small: return 0;
+                    case Size.Medium: return 0;
+                    case Size.Large: return 0;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
-        /// <summary>
+        /// <value>
         /// provides the get and set values for the calories of the drink.
         /// 0 for all sizes
-        /// </summary>
-        private uint calories;
+        /// </value>
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        calories = 0;
-                        break;
-                    case Size.Medium:
-                        calories = 0;
-                        break;
-                    case Size.Large:
-                        calories = 0;
-                        break;
+                    case Size.Small: return 0;
+                    case Size.Medium: return 0;
+                    case Size.Large: return 0;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
-        /// <summary>
+        /// <value>
         /// ice value of the drink, default true
-        /// </summary>
+        /// </value>
         public bool Ice { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// value of lemon, default false
-        /// </summary>
+        /// </value>
         public bool Lemon { get; set; } = false;
 
-        /// <summary>
+        /// <value>
         /// gets instruction list based on ice and lemon variables
-        /// </summary>
-        public List<string> SpecialInstrucitons
+        /// </value>
+        public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
                 if (!Ice) instructions.Add("Hold ice");
-                if (Lemon) instructions.Add("Add Lemon");
+                if (Lemon) instructions.Add("Add lemon");
                 return instructions;
             }
         }
@@ -100,7 +89,7 @@ namespace BleakwindBuffet.Data.Drink
         /// <summary>
         /// sends the description of this drink based on size
         /// </summary>
-        /// <returns></returns>
+        /// <returns>description of size and drink</returns>
         public override string ToString()
         {
             

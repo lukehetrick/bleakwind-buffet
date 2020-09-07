@@ -10,25 +10,28 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class to define the thalmore triple burger
+    /// </summary>
     public class ThalmoreTriple
     {
-        /// <summary>
+        /// <value>
         /// price of the burger
-        /// </summary>
+        /// </value>
         public double Price
         {
             get { return 8.32; }
         }
 
-        /// <summary>
+        /// <value>
         /// number of calories in the burger        //I was experimenting with the different get/set options
-        /// </summary>
+        /// </value>
         public uint Calories => 943;
 
 
-        /// <summary>
+        /// <value>
         /// bun get and set value, default true
-        /// </summary>
+        /// </value>
         private bool bun = true;
         public bool Bun
         {
@@ -42,57 +45,54 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// ketchup value, default true
-        /// </summary>
+        /// </value>
         public bool Ketchup { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Mustard value, default true
-        /// </summary>
+        /// </value>
         public bool Mustard { get; set; } = true;
 
-
-        /// <summary>
+        /// <value>
         /// Pickle value, default true
-        /// </summary>
+        /// </value>
         public bool Pickle { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Cheese value, default true
-        /// </summary>
+        /// </value>
         public bool Cheese { get; set; } = true;
 
-
-        /// <summary>
+        /// <value>
         /// Tomato value, default true
-        /// </summary>
+        /// </value>
         public bool Tomato { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Lettuce value, default true
-        /// </summary>        
+        /// </value>        
         public bool Lettuce { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Mayo value, default true
-        /// </summary>
+        /// </value>
         public bool Mayo { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Bacon value, default true
-        /// </summary>
+        /// </value>
         public bool Bacon { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Egg value, default true
-        /// </summary>
+        /// </value>
         public bool Egg { get; set; } = true;
 
-
-        /// <summary>
+        /// <value>
         /// gets by creating new list based on the bool variables above
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -116,10 +116,10 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// sends the name of the burger to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name of the burger: "Thalmore Triple"</returns>
         public override string ToString()
         {
-            return "Thalmore Triple";
+            return "Thalmor Triple";
         }
     }
 }

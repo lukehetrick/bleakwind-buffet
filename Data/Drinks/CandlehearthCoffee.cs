@@ -28,49 +28,35 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// the get for the price of the drink
         /// depends on size of drink
-        /// </value>
-        private double price;
+        /// </value>        
         public double Price
         {
-            get => price;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        price = 0.75;
-                        break;
-                    case Size.Medium:
-                        price = 1.25;
-                        break;
-                    case Size.Large:
-                        price = 1.75;
-                        break;
+                    case Size.Small: return 0.75;
+                    case Size.Medium: return 1.25;
+                    case Size.Large: return 1.75;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
         /// <value>
         /// provides the get and set values for the calories of the drink.
         /// depends on size of drink
         /// </value>
-        private uint calories;
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        calories = 7;
-                        break;
-                    case Size.Medium:
-                        calories = 10;
-                        break;
-                    case Size.Large:
-                        calories = 20;
-                        break;
+                    case Size.Small: return 7;
+                    case Size.Medium: return 10;
+                    case Size.Large: return 20;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }

@@ -4,51 +4,98 @@
  * Purpose: Test the MadOtarGrits.cs class in the Data library
  */
 using Xunit;
-
+using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
+    /// <summary>
+    /// Testing class for Mad Otar grits
+    /// </summary>
     public class MadOtarGritsTests
     {
+        /// <summary>
+        /// Tests that default value of size is small
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.Equal(Size.Small, mog.Size);
         }
-                
+
+        /// <summary>
+        /// Tests size setting of side
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            MadOtarGrits mog = new MadOtarGrits();
+            mog.Size = Size.Large;
+            Assert.Equal(Size.Large, mog.Size);
+            mog.Size = Size.Medium;
+            Assert.Equal(Size.Medium, mog.Size);
+            mog.Size = Size.Small;
+            Assert.Equal(Size.Small, mog.Size);
         }
 
+        /// <summary>
+        /// no speical instructions
+        /// </summary>
         [Fact]
-        public void ShouldReturnCorrectStringOnSpecialInstructions()
+        public void ShouldReturnCorrectSpecialInstructions()
         {
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.Empty(mog.SpecialInstructions);
         }
 
+        /// <summary>
+        /// Tests all the size possibilities for the price 
+        /// </summary>
+        /// <param name="size">Size of side</param>
+        /// <param name="price">Price based on size</param>
         [Theory]
         [InlineData(Size.Small, 1.22)]
         [InlineData(Size.Medium, 1.58)]
         [InlineData(Size.Large, 1.93)]
         public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
         {
+            MadOtarGrits mog = new MadOtarGrits();
+            mog.Size = size;
+            Assert.Equal(price, mog.Price);
         }
 
+        /// <summary>
+        /// Tests the proper calorie count goes with the right size
+        /// </summary>
+        /// <param name="size">Size of drink</param>
+        /// <param name="calories">Calorie count of the drink</param>
         [Theory]
         [InlineData(Size.Small, 105)]
         [InlineData(Size.Medium, 142)]
         [InlineData(Size.Large, 179)]
         public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
         {
+            MadOtarGrits mog = new MadOtarGrits();
+            mog.Size = size;
+            Assert.Equal(calories, mog.Calories);
         }
 
+        /// <summary>
+        /// Tests ToString() method of side based on size
+        /// </summary>
+        /// <param name="size">Size of side</param>
+        /// <param name="name">Correct output of TosString() based on given size</param>
         [Theory]
         [InlineData(Size.Small, "Small Mad Otar Grits")]
         [InlineData(Size.Medium, "Medium Mad Otar Grits")]
         [InlineData(Size.Large, "Large Mad Otar Grits")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            MadOtarGrits mog = new MadOtarGrits();
+            mog.Size = size;
+            Assert.Equal(name, mog.ToString());
         }
     }
 }

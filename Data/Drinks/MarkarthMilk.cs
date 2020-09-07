@@ -30,25 +30,18 @@ namespace BleakwindBuffet.Data.Drinks
         /// the get for the price of the drink
         /// depends on size of drink
         /// </value>
-        private double price;
         public double Price
         {
-            get => price;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        price = 1.05;
-                        break;
-                    case Size.Medium:
-                        price = 1.11;
-                        break;
-                    case Size.Large:
-                        price = 1.22;
-                        break;
+                    case Size.Small: return 1.05;
+                    case Size.Medium: return 1.11;
+                    case Size.Large: return 1.22;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
 
@@ -56,25 +49,18 @@ namespace BleakwindBuffet.Data.Drinks
         /// provides the get and set values for the calories of the drink.
         /// depends on size of drink
         /// </value>
-        private uint calories;
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        calories = 56;
-                        break;
-                    case Size.Medium:
-                        calories = 72;
-                        break;
-                    case Size.Large:
-                        calories = 93;
-                        break;
+                    case Size.Small: return 56;
+                    case Size.Medium: return 72;
+                    case Size.Large: return 93;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
 

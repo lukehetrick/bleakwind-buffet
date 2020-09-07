@@ -10,39 +10,40 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class to define hte Philly poacher sandwich
+    /// </summary>
     public class PhillyPoacher
     {
 
-        /// <summary>
+        /// <value>
         /// price of the sandwich
-        /// </summary>
+        /// </value>
         public double Price => 7.23;
 
-        /// <summary>
+        /// <value>
         /// calorie count of the sandwich
-        /// </summary>
+        /// </value>
         public uint Calories => 784;
 
-        /// <summary>
+        /// <value>
         /// sirloin value, default true
-        /// </summary>
+        /// </value>
         public bool Sirloin { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// onion value, default true
-        /// </summary>
+        /// </value>
         public bool Onion { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Roll value, default true
-        /// </summary>
+        /// </value>
         public bool Roll { get; set; } = true;
 
-
-
-        /// <summary>
+        /// <value>
         /// gets by creating new list based on the bool variables above
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -60,7 +61,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// sends the name of the sandwich to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name of the sandwich: "Philly Poacher"</returns>
         public override string ToString()
         {
             return "Philly Poacher";

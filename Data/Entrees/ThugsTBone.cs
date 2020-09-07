@@ -10,23 +10,26 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class to define the Thugs T-bone 
+    /// </summary>
     public class ThugsTBone
     {
-        
-        /// <summary>
+
+        /// <value>
         /// price of the T-Bone
-        /// </summary>
+        /// </value>
         public double Price => 6.44;
 
-        /// <summary>
+        /// <value>
         /// calorie count of the T-Bone
-        /// </summary>
+        /// </value>
         public uint Calories => 982;
 
 
-        /// <summary>
+        /// <value>
         /// no properties so always returns empty list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -40,7 +43,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// sends the name of the T-Bone to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name of the steak: "Thugs T-Bone"</returns>
         public override string ToString()
         {
             return "Thugs T-Bone";

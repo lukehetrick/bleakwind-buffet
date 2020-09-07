@@ -9,12 +9,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// class to define the Mad Otar Grits
+    /// </summary>
     public class MadOtarGrits
     {
 
-        /// <summary>
+        /// <value>
         /// gets and sets the size of the grits. default Small
-        /// </summary>
+        /// </value>
         private Size size = Size.Small;
         public Size Size
         {
@@ -22,59 +25,45 @@ namespace BleakwindBuffet.Data.Sides
             set { size = value; }
         }
 
-        /// <summary>
+        /// <value>
         /// the get for the price of the grits
         /// depends on the size
-        /// </summary>
-        private double price;
+        /// </value>
         public double Price
         {
-            get => price;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        price = 1.22;
-                        break;
-                    case Size.Medium:
-                        price = 1.58;
-                        break;
-                    case Size.Large:
-                        price = 1.93;
-                        break;
+                    case Size.Small: return 1.22;
+                    case Size.Medium: return 1.58;
+                    case Size.Large: return 1.93;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
-        /// <summary>
+        /// <value>
         /// provides the get and set values for the calories of the grits.
         /// depends on the size
-        /// </summary>
-        private uint calories;
+        /// </value>
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                switch (size)
+                switch (Size)
                 {
-                    case Size.Small:
-                        calories = 105;
-                        break;
-                    case Size.Medium:
-                        calories = 142;
-                        break;
-                    case Size.Large:
-                        calories = 179;
-                        break;
+                    case Size.Small: return 105;
+                    case Size.Medium: return 142;
+                    case Size.Large: return 179;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
-            }
+            }            
         }
 
-        /// <summary>
+        /// <value>
         /// no properties so always returns empty list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -88,7 +77,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// sends the description of the grits based on size
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name and size of the grits</returns>
         public override string ToString()
         {
             return size.ToString() + " Mad Otar Grits";

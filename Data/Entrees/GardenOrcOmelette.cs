@@ -10,43 +10,46 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class to define the Garden Orc Omelette
+    /// </summary>
     public class GardenOrcOmelette
     {
 
-        /// <summary>
+        /// <value>
         /// price of the omelette
-        /// </summary>
+        /// </value>
         public double Price => 4.57;
 
-        /// <summary>
+        /// <value>
         /// calorie count of the omelette
-        /// </summary>
+        /// </value>
         public uint Calories => 404;
 
-        /// <summary>
+        /// <value>
         /// Broccoli value, default true
-        /// </summary>
+        /// </value>
         public bool Broccoli { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Mushrooms value, default true
-        /// </summary>
+        /// </value>
         public bool Mushrooms { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Tomato value, default true
-        /// </summary>
+        /// </value>
         public bool Tomato { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Cheddar value, default true
-        /// </summary>
+        /// </value>
         public bool Cheddar { get; set; } = true;
 
 
-        /// <summary>
+        /// <value>
         /// gets by creating new list based on the bool variables above
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -65,7 +68,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// sends the name of the omelette to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>name of the omlette: "Garden Orc omelette"</returns>
         public override string ToString()
         {
             return "Garden Orc Omelette";

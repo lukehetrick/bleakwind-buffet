@@ -11,7 +11,7 @@ namespace BleakwindBuffet.Data.Enums
     /// </summary>
     public enum SodaFlavor
     {
-        BlackBerry,
+        Blackberry,
         Cherry,
         Grapefruit,
         Lemon,
