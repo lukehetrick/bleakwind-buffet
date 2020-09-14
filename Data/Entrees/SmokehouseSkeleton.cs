@@ -10,20 +10,20 @@ using System.Text;
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
-    /// class to define the Smokehouse skeleton breakfast combo
+    /// class to define the Smokehouse skeleton breakfast combo. Inherits Entree class
     /// </summary>
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree, IOrderItem
     {
 
         /// <value>
         /// price of the combo
         /// </value>
-        public double Price => 5.62;
+        public override double Price => 5.62;
 
         /// <value>
         /// number of calories in the combo      
         /// </value>
-        public uint Calories => 602;
+        public override uint Calories => 602;
 
         /// <value>
         /// Sasauge link value, default true
@@ -48,7 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// gets by creating new list based on the bool variables above
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

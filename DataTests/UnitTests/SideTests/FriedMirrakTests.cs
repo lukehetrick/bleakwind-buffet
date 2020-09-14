@@ -13,6 +13,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class FriedMiraakTests
     {
         /// <summary>
+        /// ensures this class inherits from the IOrderItem interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnIOrderItem()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<IOrderItem>(fm);
+        }
+
+        /// <summary>
+        /// ensures this class inherits from the base Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<Side>(fm);
+        }
+
+        /// <summary>
         /// Tests that default value of size is small
         /// </summary>
         [Fact]

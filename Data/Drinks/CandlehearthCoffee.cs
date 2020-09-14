@@ -10,26 +10,16 @@ using BleakwindBuffet.Data.Enums;
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
-    /// Class to contain Candle hearth coffee
+    /// Class to contain Candle hearth coffee. Inherits from the Drink class
     /// </summary>
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink, IOrderItem
     {
-
-        /// <value>
-        /// gets and sets the size of the drink. default Small
-        /// </value>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
 
         /// <value>
         /// the get for the price of the drink
         /// depends on size of drink
         /// </value>        
-        public double Price
+        public override double Price
         {
             get
             {
@@ -47,7 +37,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// provides the get and set values for the calories of the drink.
         /// depends on size of drink
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -80,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// gets instruction list based on ice and cream variables
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -100,11 +90,11 @@ namespace BleakwindBuffet.Data.Drinks
         {
             if(Decaf)
             {
-                return size.ToString() + " Decaf Candlehearth Coffee";
+                return Size.ToString() + " Decaf Candlehearth Coffee";
             }
             else
             {
-                return size.ToString() + " Candlehearth Coffee";
+                return Size.ToString() + " Candlehearth Coffee";
             }
             
         }

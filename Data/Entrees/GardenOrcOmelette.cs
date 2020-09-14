@@ -11,20 +11,20 @@ using System.Text;
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
-    /// Class to define the Garden Orc Omelette
+    /// Class to define the Garden Orc Omelette. Inherits Entree class
     /// </summary>
-    public class GardenOrcOmelette
+    public class GardenOrcOmelette : Entree, IOrderItem
     {
 
         /// <value>
         /// price of the omelette
         /// </value>
-        public double Price => 4.57;
+        public override double Price => 4.57;
 
         /// <value>
         /// calorie count of the omelette
         /// </value>
-        public uint Calories => 404;
+        public override uint Calories => 404;
 
         /// <value>
         /// Broccoli value, default true
@@ -50,7 +50,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// gets by creating new list based on the bool variables above
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

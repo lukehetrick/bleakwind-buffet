@@ -16,6 +16,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class DragonbornWaffleFriesTests
     {
         /// <summary>
+        /// ensures this class inherits from the IOrderItem interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnIOrderInterface()
+        {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<IOrderItem>(wf);
+        }
+
+        /// <summary>
+        /// ensures this class inherits from the base Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide()
+        {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<Side>(wf);
+        }
+
+        /// <summary>
         /// Tests that default value of size is small
         /// </summary>
         [Fact]

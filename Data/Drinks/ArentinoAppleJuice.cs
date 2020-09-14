@@ -11,26 +11,16 @@ using BleakwindBuffet.Data.Enums;
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
-    /// Class that represents Arentino Apple juice
+    /// Class that represents Arentino Apple juice. Inherits from the Drink class
     /// </summary>
-    public class ArentinoAppleJuice
+    public class ArentinoAppleJuice : Drink, IOrderItem
     {
-
-        /// <value>
-        /// gets and sets the size of the drink. default Small
-        /// </value>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
 
         /// <value>
         /// the get for the price of the drink
         /// depends on size of drink
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -48,7 +38,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// provides the get and set values for the calories of the drink.
         /// depends on size of drink
         /// </value>       
-        public uint Calories
+        public override uint Calories
         {
             get             
             {
@@ -72,7 +62,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// gets instruction list based on ice request
         /// </value>        
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -89,7 +79,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns>size and label of drink</returns>
         public override string ToString()
         {
-            return size.ToString() + " Aretino Apple Juice";
+            return Size.ToString() + " Aretino Apple Juice";
         }
 
     }

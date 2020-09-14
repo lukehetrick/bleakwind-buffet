@@ -7,29 +7,19 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Drink
+namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
-    /// class to define warrior water object
+    /// class to define warrior water object. Inherits from Drink class
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drink, IOrderItem
     {
-
-        /// <value>
-        /// gets and sets the size of the drink. default Small
-        /// </value>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
-
+               
         /// <value>
         /// the get for the price of the drink
         /// free for all sizes
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -47,7 +37,7 @@ namespace BleakwindBuffet.Data.Drink
         /// provides the get and set values for the calories of the drink.
         /// 0 for all sizes
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -74,7 +64,7 @@ namespace BleakwindBuffet.Data.Drink
         /// <value>
         /// gets instruction list based on ice and lemon variables
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -92,10 +82,7 @@ namespace BleakwindBuffet.Data.Drink
         /// <returns>description of size and drink</returns>
         public override string ToString()
         {
-            
-            return size.ToString() + " Warrior Water";
-            
-
+            return Size.ToString() + " Warrior Water";            
         }
 
 

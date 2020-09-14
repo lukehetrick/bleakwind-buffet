@@ -15,6 +15,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class SmokehouseSkeletonTests
     {
         /// <summary>
+        /// ensures this class inherits from the IOrderItem interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnIOrderItem()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<IOrderItem>(ss);
+        }
+
+        /// <summary>
+        /// ensures this class inherits from the base Entree class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<Entree>(ss);
+        }
+
+        /// <summary>
         /// Tests that the Sausage is true by default
         /// </summary>
         [Fact]

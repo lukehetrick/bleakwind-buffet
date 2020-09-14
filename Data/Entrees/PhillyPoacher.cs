@@ -11,20 +11,20 @@ using System.Text;
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
-    /// class to define hte Philly poacher sandwich
+    /// class to define hte Philly poacher sandwich. Inherits Entree class
     /// </summary>
-    public class PhillyPoacher
+    public class PhillyPoacher : Entree, IOrderItem
     {
 
         /// <value>
         /// price of the sandwich
         /// </value>
-        public double Price => 7.23;
+        public override double Price => 7.23;
 
         /// <value>
         /// calorie count of the sandwich
         /// </value>
-        public uint Calories => 784;
+        public override uint Calories => 784;
 
         /// <value>
         /// sirloin value, default true
@@ -44,7 +44,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// gets by creating new list based on the bool variables above
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

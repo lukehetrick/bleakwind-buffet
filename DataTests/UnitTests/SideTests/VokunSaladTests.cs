@@ -16,6 +16,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class VokunSaladTests
     {
         /// <summary>
+        /// ensures this class inherits from the IOrderItem interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnIOrderItem()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.IsAssignableFrom<IOrderItem>(vs);
+        }
+
+        /// <summary>
+        /// ensures this class inherits from the base Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.IsAssignableFrom<Side>(vs);
+        }
+        /// <summary>
         /// Tests that default value of size is small
         /// </summary>
         [Fact]

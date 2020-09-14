@@ -11,39 +11,28 @@ using System.Text;
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
-    /// class to define the thalmore triple burger
+    /// class to define the thalmore triple burger. Inherits Entree class
     /// </summary>
-    public class ThalmoreTriple
+    public class ThalmoreTriple : Entree, IOrderItem
     {
         /// <value>
         /// price of the burger
         /// </value>
-        public double Price
+        public override double Price
         {
             get { return 8.32; }
         }
 
         /// <value>
-        /// number of calories in the burger        //I was experimenting with the different get/set options
+        /// number of calories in the burger      
         /// </value>
-        public uint Calories => 943;
+        public override uint Calories => 943;
 
 
         /// <value>
         /// bun get and set value, default true
-        /// </value>
-        private bool bun = true;
-        public bool Bun
-        {
-            get
-            {
-                return bun;
-            }
-            set
-            {
-                bun = value;
-            }
-        }
+        /// </value>        
+        public bool Bun { get; set; } = true;
 
         /// <value>
         /// ketchup value, default true
@@ -93,7 +82,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// gets by creating new list based on the bool variables above
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

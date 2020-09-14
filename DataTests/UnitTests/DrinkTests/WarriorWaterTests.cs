@@ -8,7 +8,7 @@ using System.Text;
 using BleakwindBuffet.Data.Drinks;
 using Xunit;
 using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data.Drink;
+using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -17,6 +17,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     /// </summary>
     public class WarriorWaterTests
     {
+        /// <summary>
+        /// ensures this class inherits from the IOrderItem interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnIOrderItem()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(ww);
+        }
+
+        /// <summary>
+        /// ensures this class inherits from the base drink class
+        /// </summary>
+        [Fact]
+        public void ShouldBeADrink()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.IsAssignableFrom<Drink>(ww);
+        }
+
         /// <summary>
         /// Tests the default value for Ice is false
         /// </summary>

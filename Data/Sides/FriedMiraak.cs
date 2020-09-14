@@ -10,26 +10,16 @@ using BleakwindBuffet.Data.Enums;
 namespace BleakwindBuffet.Data.Sides
 {
     /// <summary>
-    /// class to define the Fired Miraak
+    /// class to define the Fired Miraak. Inherits from the Side class
     /// </summary>
-    public class FriedMiraak
+    public class FriedMiraak : Side, IOrderItem
     {
-
-        /// <value>
-        /// gets and sets the size of the pancakes. default Small
-        /// </value>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
 
         /// <value>
         /// the get for the price of the pancakes
         /// depends on the size
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -47,7 +37,7 @@ namespace BleakwindBuffet.Data.Sides
         /// provides the get and set values for the calories of the pancakes.
         /// depends on the size
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -64,7 +54,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// no properties so always returns empty list
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -73,14 +63,13 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-
         /// <summary>
         /// sends the description of the pancakes based on size
         /// </summary>
         /// <returns>name of side and size</returns>
         public override string ToString()
         {
-            return size.ToString() + " Fried Miraak";
+            return Size.ToString() + " Fried Miraak";
         }
 
 

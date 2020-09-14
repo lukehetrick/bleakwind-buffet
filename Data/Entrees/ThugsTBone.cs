@@ -11,26 +11,26 @@ using System.Text;
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
-    /// class to define the Thugs T-bone 
+    /// class to define the Thugs T-bone. Inherits Entree class
     /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree, IOrderItem
     {
 
         /// <value>
         /// price of the T-Bone
         /// </value>
-        public double Price => 6.44;
+        public override double Price => 6.44;
 
         /// <value>
         /// calorie count of the T-Bone
         /// </value>
-        public uint Calories => 982;
+        public override uint Calories => 982;
 
 
         /// <value>
         /// no properties so always returns empty list
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
