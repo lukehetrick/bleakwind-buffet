@@ -13,17 +13,20 @@ namespace BleakwindBuffet.Data.Drinks
     /// class that defines the Sailor Soda object. Inherits from the Drink class
     /// </summary>
     public class SailorSoda : Drink, IOrderItem
-    {               
+    {
+
+        //private SodaFlavor flavor = SodaFlavor.Cherry;
         
-        private SodaFlavor flavor = SodaFlavor.Cherry;
+        /* public SodaFlavor Flavor
+         {
+             get { return flavor; }
+             set { flavor = value; }
+         }
+        */
         /// <value>
         /// value for the flavor of drink, default Cherry
         /// </value>
-        public SodaFlavor Flavor
-        {
-            get { return flavor; }
-            set { flavor = value; }
-        }
+        public SodaFlavor Flavor = SodaFlavor.Cherry;
 
         /// <value>
         /// the get for the price of the drink
@@ -87,7 +90,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns>description of drink including size and flavor</returns>
         public override string ToString()
         {
-            return Size.ToString() + " " + flavor.ToString() + " Sailor Soda";
+            return Size.ToString() + " " + Flavor.ToString() + " Sailor Soda";
         }
 
     }

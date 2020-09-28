@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="PointOfSale.MenuSelection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+    <!-- create menu selection grid-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Buttons to allow menu traversal, Column 0 is entrees, 1 is drinks, 2 is sides-->
+        <!-- ENTREES-->
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                Add to Order
+        </TextBlock>
+
+        <Button Name="briarheartBurgerBtn" Click="BriarheartBurgerSelected" Grid.Column="0" Grid.Row="1" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Briarheart Burger
+        </Button>
+
+        <Button Name="doubleDraugrBtn" Click="DoubleDraugrSelected" Grid.Column="0" Grid.Row="2" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Double Draugr
+        </Button>
+
+        <Button Name="thalmorTripleBtn" Click="ThalmorTripleSelected" Grid.Column="0" Grid.Row="3" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Thalmor Triple
+        </Button>
+
+        <Button Name="smokeHouseSkeletonBtn" Click="SmokehouseSkeletonSelected" Grid.Column="0" Grid.Row="4" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Smokehouse Skeleton
+        </Button>
+
+        <Button Name="gardenOrcOmeletteBtn" Click="GardenOrcOmeletteSelected" Grid.Column="0" Grid.Row="5" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Garden Orc Omelette
+        </Button>
+
+        <Button Name="phillyPoacherBtn" Click="PhillyPoacherSelected" Grid.Column="0" Grid.Row="6" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Philly Poacher
+        </Button>
+        
+        <Button Name="thugsTBoneBtn" Click="ThugsTBoneSelected" Grid.Column="0" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Thugs T-Bone
+        </Button>
+
+        <!--DRINKS-->
+
+        <Button Name="salorSodaBtn" Click="SailorSodaSelected" Grid.Column="1" Grid.Row="1" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Sailor Soda
+        </Button>
+
+        <Button Name="markarthMilkBtn" Click="GenericDrinkSelected" Grid.Column="1" Grid.Row="2" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Markarth Milk
+        </Button>
+
+        <Button Name="aretinoAppleJuiceBtn" Click="GenericDrinkSelected" Grid.Column="1" Grid.Row="3" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Aretino Apple Juice
+        </Button>
+
+        <Button Name="candlehearthCoffeeBtn" Click="CandlehearthCoffeeSelected" Grid.Column="1" Grid.Row="4" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Candleheart Coffee
+        </Button>
+
+        <Button Name="warriorWaterBtn" Click="GenericDrinkSelected" Grid.Column="1" Grid.Row="5" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Warrior Water
+        </Button>
+
+        <!--SIDES-->
+        <Button Name="vokunSaladBtn" Click="SideSelected" Grid.Column="2" Grid.Row="1" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Vokun Salad
+        </Button>
+
+        <Button Name="friedMiraakBtn" Click="SideSelected" Grid.Column="2" Grid.Row="2" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Fried Miraak
+        </Button>
+
+        <Button Name="madOtarGritsBtn" Click="SideSelected" Grid.Column="2" Grid.Row="3" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Mad Otar Grits
+        </Button>
+
+        <Button Name="dragonbornWaffleFriesBtn" Click="SideSelected" Grid.Column="2" Grid.Row="4" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Dragonborn Waffle Fries
+        </Button>
+        
+    </Grid>
+</UserControl>
