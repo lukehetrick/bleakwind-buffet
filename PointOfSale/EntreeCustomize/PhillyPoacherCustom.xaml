@@ -26,15 +26,15 @@
         </TextBlock>
 
         <!--List of poperties for the Entree-->
-        <CheckBox Name="sirloinCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="sirloinCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Sirloin}">
             Sirloin
         </CheckBox>
 
-        <CheckBox Name="onionCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="onionCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Onion}">
             Onion
         </CheckBox>
 
-        <CheckBox Name="rollCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="rollCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Roll}">
             Roll
         </CheckBox>
 

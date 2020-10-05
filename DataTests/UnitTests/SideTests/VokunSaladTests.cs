@@ -7,6 +7,7 @@ using Xunit;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -115,6 +116,89 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             VokunSalad vs = new VokunSalad();
             vs.Size = size;
             Assert.Equal(name, vs.ToString());
+        }
+
+        /// <summary>
+        /// tests that Size property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            VokunSalad vs = new VokunSalad();
+
+            Assert.PropertyChanged(vs, "Size", () =>
+            {
+                vs.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(vs, "Size", () =>
+            {
+                vs.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(vs, "Size", () =>
+            {
+                vs.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Price property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            VokunSalad vs = new VokunSalad();
+
+            Assert.PropertyChanged(vs, "Price", () =>
+            {
+                vs.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(vs, "Price", () =>
+            {
+                vs.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(vs, "Price", () =>
+            {
+                vs.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Calories property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            VokunSalad vs = new VokunSalad();
+
+            Assert.PropertyChanged(vs, "Calories", () =>
+            {
+                vs.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(vs, "Calories", () =>
+            {
+                vs.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(vs, "Calories", () =>
+            {
+                vs.Size = Size.Large;
+            });
+        }
+
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(vs);
         }
     }
 }

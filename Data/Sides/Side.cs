@@ -5,6 +5,7 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
@@ -12,12 +13,31 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// generic class for all sides to inherit the properties of
     /// </summary>
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
-        /// size of side
+        /// the property changed event handler for all properties that are changeable
         /// </summary>
-        public virtual Size Size { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Size size;
+        /// <summary>
+        /// virtual size of side because all sizes are the same types and likely won't need to be overridden
+        /// </summary>
+        public virtual Size Size
+        {
+            get => size;
+            set
+            {
+                if (size != value)
+                {
+                    size = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                }
+            }
+        }
 
         /// <summary>
         /// abstract price because it will need to be overrideen for every class

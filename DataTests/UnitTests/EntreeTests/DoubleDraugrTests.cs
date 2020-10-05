@@ -6,6 +6,7 @@
 using Xunit;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -293,5 +294,320 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             DoubleDraugr dd = new DoubleDraugr();
             Assert.Equal("Double Draugr", dd.ToString());
         }
+
+        /// <summary>
+        /// tests that Bun property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Bun", () =>
+            {
+                dd.Bun = false;
+            });
+
+            Assert.PropertyChanged(dd, "Bun", () =>
+            {
+                dd.Bun = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Bun is changed
+        /// </summary>
+        [Fact]
+        public void ChangingBunNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Bun = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Bun = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Ketchup property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Ketchup", () =>
+            {
+                dd.Ketchup = false;
+            });
+
+            Assert.PropertyChanged(dd, "Ketchup", () =>
+            {
+                dd.Ketchup = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when ketchip is changed
+        /// </summary>
+        [Fact]
+        public void ChangingKetchupNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Ketchup = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Ketchup = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Mustard property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Mustard", () =>
+            {
+                dd.Mustard = false;
+            });
+
+            Assert.PropertyChanged(dd, "Mustard", () =>
+            {
+                dd.Mustard = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Mustard is changed
+        /// </summary>
+        [Fact]
+        public void ChangingMustardNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Mustard = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Mustard = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Pickle property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Pickle", () =>
+            {
+                dd.Pickle = false;
+            });
+
+            Assert.PropertyChanged(dd, "Pickle", () =>
+            {
+                dd.Pickle = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Pickle is changed
+        /// </summary>
+        [Fact]
+        public void ChangingPickleNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Pickle = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Pickle = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Cheese property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Cheese", () =>
+            {
+                dd.Cheese = false;
+            });
+
+            Assert.PropertyChanged(dd, "Cheese", () =>
+            {
+                dd.Cheese = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Cheese is changed
+        /// </summary>
+        [Fact]
+        public void ChangingCheeseNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Cheese = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Cheese = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Tomato property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Tomato", () =>
+            {
+                dd.Tomato = false;
+            });
+
+            Assert.PropertyChanged(dd, "Tomato", () =>
+            {
+                dd.Tomato = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Tomato is changed
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Tomato = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Tomato = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Lettuce property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingLettuceNotifiesLettuceProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Lettuce", () =>
+            {
+                dd.Lettuce = false;
+            });
+
+            Assert.PropertyChanged(dd, "Lettuce", () =>
+            {
+                dd.Lettuce = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Lettuce is changed
+        /// </summary>
+        [Fact]
+        public void ChangingLettuceNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Lettuce = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Lettuce = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Mayo property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingMayoNotifiesMayoProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Mayo", () =>
+            {
+                dd.Mayo = false;
+            });
+
+            Assert.PropertyChanged(dd, "Mayo", () =>
+            {
+                dd.Mayo = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Mayo is changed
+        /// </summary>
+        [Fact]
+        public void ChangingMayoNotifiesSpecialInstructionsProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Mayo = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Mayo = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dd);
+        }
+
     }
 }

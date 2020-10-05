@@ -9,6 +9,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using System.Runtime.InteropServices.ComTypes;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -217,5 +218,203 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, chc.ToString());
 
         }
+
+        /// <summary>
+        /// tests that Ice property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "Ice", () =>
+            {
+                chc.Ice = true;
+            });
+
+            Assert.PropertyChanged(chc, "Ice", () =>
+            {
+                chc.Ice = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Ice is changed
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructions()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "SpecialInstructions", () =>
+            {
+                chc.Ice = true;
+            });
+
+            Assert.PropertyChanged(chc, "SpecialInstructions", () =>
+            {
+                chc.Ice = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that decaf property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingDecafNotifiesDecafProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "Decaf", () =>
+            {
+                chc.Decaf = true;
+            });
+
+            Assert.PropertyChanged(chc, "Decaf", () =>
+            {
+                chc.Decaf = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that Special Instructions property is notified when decaf is changed
+        /// </summary>
+        [Fact]
+        public void ChangingDecafNotifiesSpecialInstructionsProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "SpecialInstructions", () =>
+            {
+                chc.Decaf = true;
+            });
+
+            Assert.PropertyChanged(chc, "SpecialInstructions", () =>
+            {
+                chc.Decaf = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that RoomForCream property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingRoomForCreamNotifiesRoomForCreamProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "RoomForCream", () =>
+            {
+                chc.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(chc, "RoomForCream", () =>
+            {
+                chc.RoomForCream = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Room for cream changed
+        /// </summary>
+        [Fact]
+        public void ChangingRoomForCreamNotifiesSpecialInstructionsProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "SpecialInstructions", () =>
+            {
+                chc.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(chc, "SpecialInstructions", () =>
+            {
+                chc.RoomForCream = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that Size property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "Size", () =>
+            {
+                chc.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(chc, "Size", () =>
+            {
+                chc.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(chc, "Size", () =>
+            {
+                chc.Size = Size.Large;
+            });
+        }
+
+
+        /// <summary>
+        /// tests that Price property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "Price", () =>
+            {
+                chc.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(chc, "Price", () =>
+            {
+                chc.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(chc, "Price", () =>
+            {
+                chc.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Calories property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(chc, "Calories", () =>
+            {
+                chc.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(chc, "Calories", () =>
+            {
+                chc.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(chc, "Calories", () =>
+            {
+                chc.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chc);
+        }
+
     }
 }

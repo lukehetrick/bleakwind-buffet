@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -12,21 +13,26 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class that defines the Sailor Soda object. Inherits from the Drink class
     /// </summary>
-    public class SailorSoda : Drink, IOrderItem
-    {
+    public class SailorSoda : Drink, IOrderItem, INotifyPropertyChanged
+    {         
 
-        //private SodaFlavor flavor = SodaFlavor.Cherry;
-        
-        /* public SodaFlavor Flavor
-         {
-             get { return flavor; }
-             set { flavor = value; }
-         }
-        */
+        private SodaFlavor flavor = SodaFlavor.Cherry;
         /// <value>
         /// value for the flavor of drink, default Cherry
         /// </value>
-        public SodaFlavor Flavor = SodaFlavor.Cherry;
+        public SodaFlavor Flavor
+        {
+            get => flavor;
+            set
+            {
+                if (value != flavor)
+                {
+                    flavor = value;
+                    NotifyPropertyChanged("Flavor");
+                }
+            }
+        }
+                
 
         /// <value>
         /// the get for the price of the drink
@@ -65,10 +71,23 @@ namespace BleakwindBuffet.Data.Drinks
             }            
         }
 
+        private bool ice = true;
         /// <value>
-        /// ice value of the drink, default true
+        /// ice value of the drink, default false
         /// </value>
-        public bool Ice { get; set; } = true;
+        public override bool Ice
+        {
+            get => ice;
+            set
+            {
+                if (value != ice)
+                {
+                    ice = value;
+                    NotifyPropertyChanged("Ice");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
         /// <value>
         /// sends special instructions based on ice property

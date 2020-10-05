@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -12,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// class to defne the Vokun Salad. Inherits from the Side class
     /// </summary>
-    public class VokunSalad : Side, IOrderItem
+    public class VokunSalad : Side, IOrderItem, INotifyPropertyChanged
     {
         /// <value>
         /// the get for the price of the salad

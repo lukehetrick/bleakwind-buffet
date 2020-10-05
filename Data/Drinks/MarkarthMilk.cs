@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -12,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class for Markarth milk. Inherits from the Drink class
     /// </summary>
-    public class MarkarthMilk : Drink, IOrderItem
+    public class MarkarthMilk : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <value>
         /// the get for the price of the drink
@@ -52,10 +53,6 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
-        /// <value>
-        /// ice value of the drink, default false
-        /// </value>
-        public bool Ice { get; set; } = false;
 
         /// <value>
         /// gets instruction list based on ice request

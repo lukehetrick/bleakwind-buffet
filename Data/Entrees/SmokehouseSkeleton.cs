@@ -6,15 +6,15 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class to define the Smokehouse skeleton breakfast combo. Inherits Entree class
     /// </summary>
-    public class SmokehouseSkeleton : Entree, IOrderItem
-    {
-
+    public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged
+    {        
         /// <value>
         /// price of the combo
         /// </value>
@@ -25,25 +25,77 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories => 602;
 
+        private bool sausageLink = true;
         /// <value>
-        /// Sasauge link value, default true
-        /// </value>
-        public bool SausageLink { get; set; } = true;
+        /// Sausage Link get and set value, default true
+        /// </value>        
+        public bool SausageLink
+        {
+            get => sausageLink;
+            set
+            {
+                if (value != sausageLink)
+                {
+                    sausageLink = value;
+                    NotifyPropertyChanged("SausageLink");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool egg = true;
         /// <value>
-        /// Egg value, default true
-        /// </value>
-        public bool Egg { get; set; } = true;
+        /// Egg get and set value, default true
+        /// </value>        
+        public bool Egg
+        {
+            get => egg;
+            set
+            {
+                if (value != egg)
+                {
+                    egg = value;
+                    NotifyPropertyChanged("Egg");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool hashbrowns = true;
         /// <value>
-        /// HashBrowns value, default true
-        /// </value>
-        public bool HashBrowns { get; set; } = true;
+        /// Hash browns get and set value, default true
+        /// </value>        
+        public bool HashBrowns
+        {
+            get => hashbrowns;
+            set
+            {
+                if (value != hashbrowns)
+                {
+                    hashbrowns = value;
+                    NotifyPropertyChanged("HashBrowns");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool pancake = true;
         /// <value>
-        /// Pancake value, default true
-        /// </value>
-        public bool Pancake { get; set; } = true;
+        /// pancake get and set value, default true
+        /// </value>        
+        public bool Pancake
+        {
+            get => pancake;
+            set
+            {
+                if (value != pancake)
+                {
+                    pancake = value;
+                    NotifyPropertyChanged("Pancake");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
         /// <value>
         /// gets by creating new list based on the bool variables above

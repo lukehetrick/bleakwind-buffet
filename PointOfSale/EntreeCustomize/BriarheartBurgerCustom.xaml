@@ -32,19 +32,19 @@
             Bun
         </CheckBox>
 
-        <CheckBox Name="KetchupCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="ketchupCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Bun}">
             Ketchup
         </CheckBox>
 
-        <CheckBox Name="mustardCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="mustardCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Mustard}">
             Mustard
         </CheckBox>
 
-        <CheckBox Name="pickleCheck" Grid.Row="4" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="pickleCheck" Grid.Row="4" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Pickle}" >
             Pickle
         </CheckBox>
 
-        <CheckBox Name="cheeseCheck" Grid.Row="5" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="cheeseCheck" Grid.Row="5" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Cheese}">
             Cheese
         </CheckBox>
 

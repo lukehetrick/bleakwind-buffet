@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -138,6 +139,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             }
         }
 
+        /// <summary>
+        /// tests that it returns the correct string fo ToString method
+        /// </summary>
+        /// <param name="size">size of dink</param>
+        /// <param name="name">correct toString return</param>
         [Theory]
         [InlineData(Size.Small, "Small Markarth Milk")]
         [InlineData(Size.Medium, "Medium Markarth Milk")]
@@ -147,6 +153,128 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             MarkarthMilk mm = new MarkarthMilk();
             mm.Size = size;
             Assert.Equal(name, mm.ToString());
+        }
+
+        /// <summary>
+        /// tests that Ice property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "Ice", () =>
+            {
+                mm.Ice = true;
+            });
+
+            Assert.PropertyChanged(mm, "Ice", () =>
+            {
+                mm.Ice = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Ice is changed
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructions()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "SpecialInstructions", () =>
+            {
+                mm.Ice = true;
+            });
+
+            Assert.PropertyChanged(mm, "SpecialInstructions", () =>
+            {
+                mm.Ice = false;
+            });
+
+        }
+
+        /// <summary>
+        /// tests that Size property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "Size", () =>
+            {
+                mm.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(mm, "Size", () =>
+            {
+                mm.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(mm, "Size", () =>
+            {
+                mm.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Price property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "Price", () =>
+            {
+                mm.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(mm, "Price", () =>
+            {
+                mm.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(mm, "Price", () =>
+            {
+                mm.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Calories property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "Calories", () =>
+            {
+                mm.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(mm, "Calories", () =>
+            {
+                mm.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(mm, "Calories", () =>
+            {
+                mm.Size = Size.Large;
+            });
+        }
+
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(mm);
         }
     }
 }

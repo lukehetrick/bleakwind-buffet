@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -12,8 +13,12 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class to contain Candle hearth coffee. Inherits from the Drink class
     /// </summary>
-    public class CandlehearthCoffee : Drink, IOrderItem
+    public class CandlehearthCoffee : Drink, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// the property changed event handler for all properties that are changeable
+        /// </summary>
+       // public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// the get for the price of the drink
@@ -52,20 +57,42 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
+        private bool roomforcream = false;
+        /// <value>
+        /// Room for cream value of the drink, default false
+        /// </value>
+        public virtual bool RoomForCream
+        {
+            get => roomforcream;
+            set
+            {
+                if (value != roomforcream)
+                {
+                    roomforcream = value;
+
+                    NotifyPropertyChanged("RoomForCream");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
+
+        private bool decaf = false;
         /// <value>
         /// ice value of the drink, default false
         /// </value>
-        public bool Ice { get; set; } = false;
-
-        /// <value>
-        /// value for room for cream in the coffee, default false
-        /// </value>
-        public bool RoomForCream { get; set; } = false;
-
-        /// <value>
-        /// value for decaf coffee, default false
-        /// </value>
-        public bool Decaf { get; set; } = false;
+        public virtual bool Decaf
+        {
+            get => decaf;
+            set
+            {
+                if (value != decaf)
+                {
+                    decaf = value;
+                    NotifyPropertyChanged("Decaf");
+                    NotifyPropertyChanged("SpecialInstructions");                   
+                }
+            }
+        }
 
         /// <value>
         /// gets instruction list based on ice and cream variables

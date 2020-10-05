@@ -26,15 +26,15 @@
         </TextBlock>
 
         <!--List of poperties for the Entree-->
-        <CheckBox Name="iceCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="iceCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Ice}">
             Ice
         </CheckBox>
 
-        <CheckBox Name="creamCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="creamCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=RoomForCream}">
             Room for Cream
         </CheckBox>
 
-        <CheckBox Name="decafCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="decafCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Decaf}">
             Decaf
         </CheckBox>
         <!--Radiobuttons for to decide Size of drink-->
@@ -42,10 +42,10 @@
             Size:
         </TextBlock>
 
-        <StackPanel Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">
-            <RadioButton GroupName="Size" FontSize="16" IsChecked="True">Small</RadioButton>
-            <RadioButton GroupName="Size" FontSize="16">Medium</RadioButton>
-            <RadioButton GroupName="Size" FontSize="16">Large</RadioButton>
+        <StackPanel Name="sizeButtons" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">
+            <RadioButton Name="sizeButtons" GroupName="Sizes" FontSize="16" IsChecked="{Binding Path=Size}">Small</RadioButton>
+            <RadioButton GroupName="Sizes" FontSize="16">Medium</RadioButton>
+            <RadioButton GroupName="Sizes" FontSize="16">Large</RadioButton>
         </StackPanel>
 
 

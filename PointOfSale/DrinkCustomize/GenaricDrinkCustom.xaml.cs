@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Drinks;
 namespace PointOfSale.DrinkCustomize
 {
     /// <summary>
@@ -23,10 +23,15 @@ namespace PointOfSale.DrinkCustomize
     public partial class GenaricDrinkCustom : UserControl
     {
         OrderComponent order;
+        Drink drink = new MarkarthMilk();
         public GenaricDrinkCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            this.DataContext = drink;
+            iceCheck.DataContext = drink.Ice;
+            sizeButtons.DataContext = drink.Size;
+
         }
 
         /// <summary>

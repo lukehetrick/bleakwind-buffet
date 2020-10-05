@@ -7,6 +7,7 @@ using Xunit;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -116,6 +117,89 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             wf.Size = size;
             Assert.Equal(name, wf.ToString());
+        }
+
+        /// <summary>
+        /// tests that Size property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+
+            Assert.PropertyChanged(wf, "Size", () =>
+            {
+                wf.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(wf, "Size", () =>
+            {
+                wf.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(wf, "Size", () =>
+            {
+                wf.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Price property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+
+            Assert.PropertyChanged(wf, "Price", () =>
+            {
+                wf.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(wf, "Price", () =>
+            {
+                wf.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(wf, "Price", () =>
+            {
+                wf.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Calories property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+
+            Assert.PropertyChanged(wf, "Calories", () =>
+            {
+                wf.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(wf, "Calories", () =>
+            {
+                wf.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(wf, "Calories", () =>
+            {
+                wf.Size = Size.Large;
+            });
+        }
+
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(wf);
         }
     }
 }

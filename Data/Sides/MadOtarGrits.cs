@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -12,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// class to define the Mad Otar Grits. Inherits from the Side class
     /// </summary>
-    public class MadOtarGrits : Side, IOrderItem
+    public class MadOtarGrits : Side, IOrderItem, INotifyPropertyChanged
     {
         /// <value>
         /// the get for the price of the grits

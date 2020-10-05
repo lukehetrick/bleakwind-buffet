@@ -6,6 +6,7 @@
 using Xunit;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -66,6 +67,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             ThugsTBone tb = new ThugsTBone();
             Assert.Equal("Thugs T-Bone", tb.ToString());
+        }
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            ThugsTBone tb = new ThugsTBone();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tb);
         }
     }
 }

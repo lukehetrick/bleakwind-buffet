@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 
 namespace BleakwindBuffet.Data.Drinks
@@ -13,7 +14,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class that represents Arentino Apple juice. Inherits from the Drink class
     /// </summary>
-    public class ArentinoAppleJuice : Drink, IOrderItem
+    public class ArentinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged
     {
 
         /// <value>
@@ -47,17 +48,11 @@ namespace BleakwindBuffet.Data.Drinks
                     case Size.Small: return 44;                       
                     case Size.Medium: return 88;                        
                     case Size.Large: return 132;
-                    default: throw new NotImplementedException("Should never be reached");  
-                    
+                    default: throw new NotImplementedException("Should never be reached");                      
                 }
             }
         }
-
-
-        /// <value>
-        /// ice value of the drink, default false
-        /// </value>
-        public bool Ice { get; set; } = false;
+        
 
         /// <value>
         /// gets instruction list based on ice request
@@ -70,7 +65,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (Ice) instructions.Add("Add ice");
                 return instructions;
             }
-        }
+        }        
 
 
         /// <summary>

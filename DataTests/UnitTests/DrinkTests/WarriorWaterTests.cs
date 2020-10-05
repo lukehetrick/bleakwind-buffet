@@ -9,6 +9,7 @@ using BleakwindBuffet.Data.Drinks;
 using Xunit;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -180,6 +181,166 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             WarriorWater ww = new WarriorWater();
             ww.Size = size;
             Assert.Equal(name, ww.ToString());
+        }
+
+
+        /// <summary>
+        /// tests that Ice property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = false;
+            });
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Ice is changed
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructions()
+        {
+            WarriorWater ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Ice = false;
+            });
+
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Ice = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Ice property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingLemonNotifiesLemonProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = true;
+            });
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Ice is changed
+        /// </summary>
+        [Fact]
+        public void ChangingLemonNotifiesSpecialInstructions()
+        {
+            WarriorWater ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Lemon = true;
+            });
+
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Lemon = false;
+            });
+        }
+
+        /// <summary>
+        /// tests that Size property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Price property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Price", () =>
+            {
+                ww.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(ww, "Price", () =>
+            {
+                ww.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(ww, "Price", () =>
+            {
+                ww.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Calories property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Calories", () =>
+            {
+                ww.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(ww, "Calories", () =>
+            {
+                ww.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(ww, "Calories", () =>
+            {
+                ww.Size = Size.Large;
+            });
+        }
+
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ww);
         }
     }
 }

@@ -31,7 +31,7 @@
         </TextBlock>
 
         <StackPanel Grid.Row="2" Grid.Column="1" >
-            <RadioButton GroupName="Size" FontSize="16" IsChecked="True">Small</RadioButton>
+            <RadioButton Name="sizeButtons" GroupName="Size" FontSize="16" IsChecked="True">Small</RadioButton>
             <RadioButton GroupName="Size" FontSize="16">Medium</RadioButton>
             <RadioButton GroupName="Size" FontSize="16">Large</RadioButton>
         </StackPanel>

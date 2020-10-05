@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Entrees;
 namespace PointOfSale.EntreeCustomize
 {
     /// <summary>
@@ -23,10 +23,17 @@ namespace PointOfSale.EntreeCustomize
     public partial class SmokehouseSkeletonCustom : UserControl
     {
         OrderComponent order;
+        SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
         public SmokehouseSkeletonCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            pancakeCheck.DataContext = skeleton.Pancake;
+            HashbrownCheck.DataContext = skeleton.HashBrowns;
+            EggCheck.DataContext = skeleton.Egg;
+            sasaugeLinkCheck.DataContext = skeleton.SausageLink;
+            this.DataContext = skeleton;
+
         }
 
         /// <summary>

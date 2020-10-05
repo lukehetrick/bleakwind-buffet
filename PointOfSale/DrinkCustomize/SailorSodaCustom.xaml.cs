@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Drinks;
 namespace PointOfSale.DrinkCustomize
 {
     /// <summary>
@@ -22,11 +22,16 @@ namespace PointOfSale.DrinkCustomize
     /// </summary>
     public partial class SailorSodaCustom : UserControl
     {
+        SailorSoda soda = new SailorSoda();
         OrderComponent order;
         public SailorSodaCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            this.DataContext = soda;
+            iceCheck.DataContext = soda.Ice;
+            sizeButtons.DataContext = soda.Size;
+            flavorButtons.DataContext = soda.Flavor;
         }
 
         /// <summary>

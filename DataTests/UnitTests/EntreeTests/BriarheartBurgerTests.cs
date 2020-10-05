@@ -6,6 +6,7 @@
 using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -212,6 +213,207 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             BriarheartBurger bb = new BriarheartBurger();
             Assert.Equal("Briarheart Burger", bb.ToString());
+        }
+
+
+        /// <summary>
+        /// tests that Bun property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "Bun", () =>
+            {
+                bb.Bun = false;
+            });
+
+            Assert.PropertyChanged(bb, "Bun", () =>
+            {
+                bb.Bun = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Bun is changed
+        /// </summary>
+        [Fact]
+        public void ChangingBunNotifiesSpecialInstructionsProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Bun = false;
+            });
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Bun = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Ketchup property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "Ketchup", () =>
+            {
+                bb.Ketchup = false;
+            });
+
+            Assert.PropertyChanged(bb, "Ketchup", () =>
+            {
+                bb.Ketchup = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when ketchip is changed
+        /// </summary>
+        [Fact]
+        public void ChangingKetchupNotifiesSpecialInstructionsProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Ketchup = false;
+            });
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Ketchup = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Mustard property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "Mustard", () =>
+            {
+                bb.Mustard = false;
+            });
+
+            Assert.PropertyChanged(bb, "Mustard", () =>
+            {
+                bb.Mustard = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Mustard is changed
+        /// </summary>
+        [Fact]
+        public void ChangingMustardNotifiesSpecialInstructionsProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Mustard = false;
+            });
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Mustard = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Pickle property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "Pickle", () =>
+            {
+                bb.Pickle = false;
+            });
+
+            Assert.PropertyChanged(bb, "Pickle", () =>
+            {
+                bb.Pickle = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Pickle is changed
+        /// </summary>
+        [Fact]
+        public void ChangingPickleNotifiesSpecialInstructionsProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Pickle = false;
+            });
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Pickle = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Cheese property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "Cheese", () =>
+            {
+                bb.Cheese = false;
+            });
+
+            Assert.PropertyChanged(bb, "Cheese", () =>
+            {
+                bb.Cheese = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Cheese is changed
+        /// </summary>
+        [Fact]
+        public void ChangingCheeseNotifiesSpecialInstructionsProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Cheese = false;
+            });
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Cheese = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(bb);
         }
     }
 }

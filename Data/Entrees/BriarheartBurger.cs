@@ -7,14 +7,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for briarheart burger. Inherits Entree class
     /// </summary>
-    public class BriarheartBurger : Entree, IOrderItem
+    public class BriarheartBurger : Entree, IOrderItem, INotifyPropertyChanged
     {
+        
+
         /// <value>
         /// price of the burger
         /// </value>
@@ -29,32 +32,96 @@ namespace BleakwindBuffet.Data.Entrees
         public override uint Calories => 743;
 
 
+        private bool bun = true;
         /// <value>
         /// bun get and set value, default true
         /// </value>        
-        public bool Bun { get; set; } = true;
-      
+        public bool Bun
+        {
+            get => bun;
+            set
+            {
+                if (value != bun)
+                {
+                    bun = value;
+                    NotifyPropertyChanged("Bun");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool ketchup = true;
         /// <value>
         /// ketchup value, default true
         /// </value>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get => ketchup;
+            set
+            {
+                if (value != ketchup)
+                {
+                    ketchup = value;
+                    NotifyPropertyChanged("Ketchup");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool mustard = true;
         /// <value>
         /// Mustard value, default true
         /// </value>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get => mustard;
+            set
+            {
+                if (value != mustard)
+                {
+                    mustard = value;
+                    NotifyPropertyChanged("Mustard");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
 
+        private bool pickle = true;
         /// <value>
         /// Pickle value, default true
         /// </value>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get => pickle;
+            set
+            {
+                if (value != pickle)
+                {
+                    pickle = value;
+                    NotifyPropertyChanged("Pickle"); 
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool cheese = true;
         /// <value>
         /// Cheese value, default true
         /// </value>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get => cheese;
+            set
+            {
+                if (value != cheese)
+                {
+                    cheese = value;
+                    NotifyPropertyChanged("Cheese");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
 
         /// <value>

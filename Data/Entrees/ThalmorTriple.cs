@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -13,8 +14,8 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// class to define the thalmore triple burger. Inherits Entree class
     /// </summary>
-    public class ThalmoreTriple : Entree, IOrderItem
-    {
+    public class ThalmoreTriple : Entree, IOrderItem, INotifyPropertyChanged
+    {        
         /// <value>
         /// price of the burger
         /// </value>
@@ -29,55 +30,185 @@ namespace BleakwindBuffet.Data.Entrees
         public override uint Calories => 943;
 
 
+        private bool bun = true;
         /// <value>
         /// bun get and set value, default true
         /// </value>        
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get => bun;
+            set
+            {
+                if (value != bun)
+                {
+                    bun = value;
+                    NotifyPropertyChanged("Bun");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool ketchup = true;
         /// <value>
         /// ketchup value, default true
         /// </value>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get => ketchup;
+            set
+            {
+                if (value != ketchup)
+                {
+                    ketchup = value;
+                    NotifyPropertyChanged("Ketchup");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool mustard = true;
         /// <value>
         /// Mustard value, default true
         /// </value>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get => mustard;
+            set
+            {
+                if (value != mustard)
+                {
+                    mustard = value;
+                    NotifyPropertyChanged("Mustard");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool pickle = true;
         /// <value>
         /// Pickle value, default true
         /// </value>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get => pickle;
+            set
+            {
+                if (value != pickle)
+                {
+                    pickle = value;
+                    NotifyPropertyChanged("Pickle");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool cheese = true;
         /// <value>
         /// Cheese value, default true
         /// </value>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get => cheese;
+            set
+            {
+                if (value != cheese)
+                {
+                    cheese = value;
+                    NotifyPropertyChanged("Cheese");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool tomato = true;
         /// <value>
-        /// Tomato value, default true
+        /// tomato value, default true
         /// </value>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get => tomato;
+            set
+            {
+                if (value != tomato)
+                {
+                    tomato = value;
+                    NotifyPropertyChanged("Tomato");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool lettuce = true;
         /// <value>
         /// Lettuce value, default true
-        /// </value>        
-        public bool Lettuce { get; set; } = true;
+        /// </value>
+        public bool Lettuce
+        {
+            get => lettuce;
+            set
+            {
+                if (value != lettuce)
+                {
+                    lettuce = value;
+                    NotifyPropertyChanged("Lettuce");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool mayo = true;
         /// <value>
         /// Mayo value, default true
         /// </value>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get => mayo;
+            set
+            {
+                if (value != mayo)
+                {
+                    mayo = value;
+                    NotifyPropertyChanged("Mayo");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool bacon = true;
         /// <value>
         /// Bacon value, default true
         /// </value>
-        public bool Bacon { get; set; } = true;
+        public bool Bacon
+        {
+            get => bacon;
+            set
+            {
+                if (value != bacon)
+                {
+                    bacon = value;
+                    NotifyPropertyChanged("Bacon");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool egg = true;
         /// <value>
-        /// Egg value, default true
+        /// Mayo value, default true
         /// </value>
-        public bool Egg { get; set; } = true;
+        public bool Egg
+        {
+            get => egg;
+            set
+            {
+                if (value != egg)
+                {
+                    egg = value;
+                    NotifyPropertyChanged("Egg");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
         /// <value>
         /// gets by creating new list based on the bool variables above

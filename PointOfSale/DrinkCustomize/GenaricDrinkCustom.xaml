@@ -31,12 +31,12 @@
         </TextBlock>
 
         <StackPanel Grid.Row="3" Grid.Column="1" >
-            <RadioButton GroupName="Size" FontSize="16" IsChecked="True">Small</RadioButton>
+            <RadioButton Name="sizeButtons" GroupName="Size" FontSize="16" IsChecked="True">Small</RadioButton>
             <RadioButton GroupName="Size" FontSize="16">Medium</RadioButton>
             <RadioButton GroupName="Size" FontSize="16">Large</RadioButton>
         </StackPanel>
         <!--List of poperties for the Entree-->
-        <CheckBox Name="iceCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="iceCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Ice">
             Ice
         </CheckBox>
 

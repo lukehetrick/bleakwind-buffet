@@ -7,6 +7,7 @@ using Xunit;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -115,6 +116,89 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             MadOtarGrits mog = new MadOtarGrits();
             mog.Size = size;
             Assert.Equal(name, mog.ToString());
+        }
+
+        /// <summary>
+        /// tests that Size property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+
+            Assert.PropertyChanged(mog, "Size", () =>
+            {
+                mog.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(mog, "Size", () =>
+            {
+                mog.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(mog, "Size", () =>
+            {
+                mog.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Price property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+
+            Assert.PropertyChanged(mog, "Price", () =>
+            {
+                mog.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(mog, "Price", () =>
+            {
+                mog.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(mog, "Price", () =>
+            {
+                mog.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// tests that Calories property is notified when Size is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+
+            Assert.PropertyChanged(mog, "Calories", () =>
+            {
+                mog.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(mog, "Calories", () =>
+            {
+                mog.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(mog, "Calories", () =>
+            {
+                mog.Size = Size.Large;
+            });
+        }
+
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(mog);
         }
     }
 }

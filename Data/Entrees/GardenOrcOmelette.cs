@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -13,9 +14,9 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class to define the Garden Orc Omelette. Inherits Entree class
     /// </summary>
-    public class GardenOrcOmelette : Entree, IOrderItem
+    public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
-
+        
         /// <value>
         /// price of the omelette
         /// </value>
@@ -26,25 +27,77 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories => 404;
 
+        private bool broccoli = true;
         /// <value>
-        /// Broccoli value, default true
-        /// </value>
-        public bool Broccoli { get; set; } = true;
+        /// Broccoli get and set value, default true
+        /// </value>        
+        public bool Broccoli
+        {
+            get => broccoli;
+            set
+            {
+                if (value != broccoli)
+                {
+                    broccoli = value;
+                    NotifyPropertyChanged("Broccoli");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool mushrooms = true;
         /// <value>
-        /// Mushrooms value, default true
-        /// </value>
-        public bool Mushrooms { get; set; } = true;
+        /// Mushroom get and set value, default true
+        /// </value>        
+        public bool Mushrooms
+        {
+            get => mushrooms;
+            set
+            {
+                if (value != mushrooms)
+                {
+                    mushrooms = value;
+                    NotifyPropertyChanged("Mushrooms");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool tomato = true;
         /// <value>
-        /// Tomato value, default true
+        /// tomato value, default true
         /// </value>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get => tomato;
+            set
+            {
+                if (value != tomato)
+                {
+                    tomato = value;
+                    NotifyPropertyChanged("Tomato");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool cheddar = true;
         /// <value>
         /// Cheddar value, default true
         /// </value>
-        public bool Cheddar { get; set; } = true;
+        public bool Cheddar
+        {
+            get => cheddar;
+            set
+            {
+                if (value != cheddar)
+                {
+                    cheddar = value;
+                    NotifyPropertyChanged("Cheddar"); 
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
 
         /// <value>

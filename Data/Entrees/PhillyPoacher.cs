@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -13,9 +14,8 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// class to define hte Philly poacher sandwich. Inherits Entree class
     /// </summary>
-    public class PhillyPoacher : Entree, IOrderItem
-    {
-
+    public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged
+    {       
         /// <value>
         /// price of the sandwich
         /// </value>
@@ -26,20 +26,59 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories => 784;
 
+        private bool sirloin = true;
         /// <value>
-        /// sirloin value, default true
-        /// </value>
-        public bool Sirloin { get; set; } = true;
+        /// Sirloin get and set value, default true
+        /// </value>        
+        public bool Sirloin
+        {
+            get => sirloin;
+            set
+            {
+                if (value != sirloin)
+                {
+                    sirloin = value;
+                    NotifyPropertyChanged("Sirloin");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool onion = true;
         /// <value>
-        /// onion value, default true
-        /// </value>
-        public bool Onion { get; set; } = true;
+        /// Onion get and set value, default true
+        /// </value>        
+        public bool Onion
+        {
+            get => onion;
+            set
+            {
+                if (value != onion)
+                {
+                    onion = value;
+                    NotifyPropertyChanged("Onion");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool roll = true;
         /// <value>
-        /// Roll value, default true
-        /// </value>
-        public bool Roll { get; set; } = true;
+        /// bun get and set value, default true
+        /// </value>        
+        public bool Roll
+        {
+            get => roll;
+            set
+            {
+                if (value != roll)
+                {
+                    roll = value;
+                    NotifyPropertyChanged("Roll");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
         /// <value>
         /// gets by creating new list based on the bool variables above

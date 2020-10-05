@@ -27,19 +27,19 @@
         </TextBlock>
 
         <!--List of poperties for the Entree-->
-        <CheckBox Name="sasaugeLinkCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="sasaugeLinkCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=SausageLink}">
             Sausage Link
         </CheckBox>
 
-        <CheckBox Name="EggCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="EggCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Egg}">
             Egg
         </CheckBox>
 
-        <CheckBox Name="HashbrownCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="HashbrownCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=HashBrowns}">
             Hash Browns
         </CheckBox>
 
-        <CheckBox Name="pancakeCheck" Grid.Row="4" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="pancakeCheck" Grid.Row="4" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Pancake}">
             Pancakes
         </CheckBox>
 

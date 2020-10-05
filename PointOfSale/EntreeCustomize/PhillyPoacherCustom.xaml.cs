@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Entrees;
 namespace PointOfSale.EntreeCustomize
 {
     /// <summary>
@@ -23,10 +23,15 @@ namespace PointOfSale.EntreeCustomize
     public partial class PhillyPoacherCustom : UserControl
     {
         OrderComponent order;
+        PhillyPoacher philly = new PhillyPoacher();
         public PhillyPoacherCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            sirloinCheck.DataContext = philly.Sirloin;
+            rollCheck.DataContext = philly.Roll;
+            onionCheck.DataContext = philly.Onion;
+            this.DataContext = philly;
         }
 
         /// <summary>

@@ -27,19 +27,19 @@
         </TextBlock>
 
         <!--List of poperties for the Entree-->
-        <CheckBox Name="broccoliCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="broccoliCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Broccoli}">
             Broccoli
         </CheckBox>
 
-        <CheckBox Name="mushroomsCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="mushroomsCheck" Grid.Row="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Mushrooms}">
             Mushrooms
         </CheckBox>
 
-        <CheckBox Name="tomatoCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="tomatoCheck" Grid.Row="3" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Tomato}">
             Tomato
         </CheckBox>
 
-        <CheckBox Name="cheddarCheck" Grid.Row="4" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True">
+        <CheckBox Name="cheddarCheck" Grid.Row="4" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Cheddar}">
             Cheddar
         </CheckBox>
         

@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -12,9 +13,8 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class to define warrior water object. Inherits from Drink class
     /// </summary>
-    public class WarriorWater : Drink, IOrderItem
+    public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
-               
         /// <value>
         /// the get for the price of the drink
         /// free for all sizes
@@ -51,15 +51,41 @@ namespace BleakwindBuffet.Data.Drinks
             }            
         }
 
+        private bool ice = true;
         /// <value>
-        /// ice value of the drink, default true
+        /// ice value of the drink, default false
         /// </value>
-        public bool Ice { get; set; } = true;
+        public override bool Ice
+        {
+            get => ice;
+            set
+            {
+                if (value != ice)
+                {
+                    ice = value;
+                    NotifyPropertyChanged("Ice");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
+        private bool lemon = false;
         /// <value>
-        /// value of lemon, default false
+        /// lemon value of the drink, default false
         /// </value>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get => lemon;
+            set
+            {
+                if (value != lemon)
+                {
+                    lemon = value;
+                    NotifyPropertyChanged("Lemon");
+                    NotifyPropertyChanged("SpecialInstructions");
+                }
+            }
+        }
 
         /// <value>
         /// gets instruction list based on ice and lemon variables

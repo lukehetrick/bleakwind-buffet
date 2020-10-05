@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Entrees;
 namespace PointOfSale.EntreeCustomize
 {
     /// <summary>
@@ -23,10 +23,16 @@ namespace PointOfSale.EntreeCustomize
     public partial class GardenOrcOmeletteCustom : UserControl
     {
         OrderComponent order;
+        GardenOrcOmelette omelette = new GardenOrcOmelette();
         public GardenOrcOmeletteCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            cheddarCheck.DataContext = omelette.Cheddar;
+            tomatoCheck.DataContext = omelette.Tomato;
+            broccoliCheck.DataContext = omelette.Broccoli;
+            mushroomsCheck.DataContext = omelette.Mushrooms;
+            this.DataContext = omelette;
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Entrees;
 namespace PointOfSale.EntreeCustomize
 {
     /// <summary>
@@ -22,12 +22,14 @@ namespace PointOfSale.EntreeCustomize
     /// </summary>
     public partial class ThugsTBoneCustom : UserControl
     {
+        ThugsTBone tbone = new ThugsTBone();
         OrderComponent order;
 
         public ThugsTBoneCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            this.DataContext = tbone;
         }
 
         /// <summary>

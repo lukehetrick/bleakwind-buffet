@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Entrees;
 namespace PointOfSale.EntreeCustomize
 {
     /// <summary>
@@ -23,10 +23,20 @@ namespace PointOfSale.EntreeCustomize
     public partial class DoubleDraugrCustom : UserControl
     {
         OrderComponent order;
+        DoubleDraugr burger = new DoubleDraugr();
         public DoubleDraugrCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            bunCheck.DataContext = burger.Bun;
+            mustardCheck.DataContext = burger.Mustard;
+            pickleCheck.DataContext = burger.Pickle;
+            cheeseCheck.DataContext = burger.Cheese;
+            ketchupCheck.DataContext = burger.Ketchup;
+            mayoCheck.DataContext = burger.Mayo;
+            tomatoCheck.DataContext = burger.Tomato;
+            lettuceCheck.DataContext = burger.Lettuce;
+            this.DataContext = burger;
         }
 
         /// <summary>

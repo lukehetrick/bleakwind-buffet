@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -13,9 +14,8 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// class to define the Thugs T-bone. Inherits Entree class
     /// </summary>
-    public class ThugsTBone : Entree, IOrderItem
-    {
-
+    public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged
+    {     
         /// <value>
         /// price of the T-Bone
         /// </value>
@@ -48,5 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
         {
             return "Thugs T-Bone";
         }
+
+
     }
 }

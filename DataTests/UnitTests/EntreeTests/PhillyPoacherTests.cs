@@ -6,6 +6,7 @@
 using Xunit;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -138,6 +139,130 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             PhillyPoacher pp = new PhillyPoacher();
             Assert.Equal("Philly Poacher", pp.ToString());
+        }
+
+        /// <summary>
+        /// tests that Roll property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+
+            Assert.PropertyChanged(pp, "Roll", () =>
+            {
+                pp.Roll = false;
+            });
+
+            Assert.PropertyChanged(pp, "Roll", () =>
+            {
+                pp.Roll = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Roll is changed
+        /// </summary>
+        [Fact]
+        public void ChangingRollNotifiesSpecialInstructionsProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+
+            Assert.PropertyChanged(pp, "SpecialInstructions", () =>
+            {
+                pp.Roll = false;
+            });
+
+            Assert.PropertyChanged(pp, "SpecialInstructions", () =>
+            {
+                pp.Roll = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Sirloin property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+
+            Assert.PropertyChanged(pp, "Sirloin", () =>
+            {
+                pp.Sirloin = false;
+            });
+
+            Assert.PropertyChanged(pp, "Sirloin", () =>
+            {
+                pp.Sirloin = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Sirloin is changed
+        /// </summary>
+        [Fact]
+        public void ChangingSirloinNotifiesSpecialInstructionsProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+
+            Assert.PropertyChanged(pp, "SpecialInstructions", () =>
+            {
+                pp.Sirloin = false;
+            });
+
+            Assert.PropertyChanged(pp, "SpecialInstructions", () =>
+            {
+                pp.Sirloin = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Onion property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+
+            Assert.PropertyChanged(pp, "Onion", () =>
+            {
+                pp.Onion = false;
+            });
+
+            Assert.PropertyChanged(pp, "Onion", () =>
+            {
+                pp.Onion = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Onion is changed
+        /// </summary>
+        [Fact]
+        public void ChangingOnionNotifiesSpecialInstructionsProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+
+            Assert.PropertyChanged(pp, "SpecialInstructions", () =>
+            {
+                pp.Onion = false;
+            });
+
+            Assert.PropertyChanged(pp, "SpecialInstructions", () =>
+            {
+                pp.Onion = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(pp);
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data.Sides;
 namespace PointOfSale.SideCustomize
 {
     /// <summary>
@@ -22,11 +22,14 @@ namespace PointOfSale.SideCustomize
     /// </summary>
     public partial class SideCustom : UserControl
     {
+        Side side = new DragonbornWaffleFries();
         OrderComponent order;
         public SideCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            this.DataContext = side;
+            sizeButtons.DataContext = side.Size;
         }
 
         /// <summary>

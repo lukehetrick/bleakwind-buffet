@@ -6,6 +6,7 @@
 using Xunit;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -187,5 +188,168 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             GardenOrcOmelette goo = new GardenOrcOmelette();
             Assert.Equal("Garden Orc Omelette", goo.ToString());
         }
+
+        /// <summary>
+        /// tests that Cheddar property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingCheddarNotifiesCheddarProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "Cheddar", () =>
+            {
+                goo.Cheddar = false;
+            });
+
+            Assert.PropertyChanged(goo, "Cheddar", () =>
+            {
+                goo.Cheddar = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Cheddar is changed
+        /// </summary>
+        [Fact]
+        public void ChangingCheddarNotifiesSpecialInstructionsProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Cheddar = false;
+            });
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Cheddar = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Tomato property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "Tomato", () =>
+            {
+                goo.Tomato = false;
+            });
+
+            Assert.PropertyChanged(goo, "Tomato", () =>
+            {
+                goo.Tomato = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Tomato is changed
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesSpecialInstructionsProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Tomato = false;
+            });
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Tomato = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Mushrooms property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingMushroomsNotifiesMushroomsProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "Mushrooms", () =>
+            {
+                goo.Mushrooms = false;
+            });
+
+            Assert.PropertyChanged(goo, "Mushrooms", () =>
+            {
+                goo.Mushrooms = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Mushrooms is changed
+        /// </summary>
+        [Fact]
+        public void ChangingMushroomsNotifiesSpecialInstructionsProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Mushrooms = false;
+            });
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Mushrooms = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that Broccoli property is notified when changed
+        /// </summary>
+        [Fact]
+        public void ChangingBroccoliNotifiesBroccoliProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "Broccoli", () =>
+            {
+                goo.Broccoli = false;
+            });
+
+            Assert.PropertyChanged(goo, "Broccoli", () =>
+            {
+                goo.Broccoli = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that SpecialInstructions property is notified when Broccoli is changed
+        /// </summary>
+        [Fact]
+        public void ChangingBroccoliNotifiesSpecialInstructionsProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Broccoli = false;
+            });
+
+            Assert.PropertyChanged(goo, "SpecialInstructions", () =>
+            {
+                goo.Broccoli = true;
+            });
+        }
+
+        /// <summary>
+        /// tests that this class inherits from the INotifyPropertyChanged interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(bb);
+        }
+
     }
 }
