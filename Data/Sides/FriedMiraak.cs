@@ -15,6 +15,13 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>
     public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Fried Miraak";
+        }
 
         /// <value>
         /// the get for the price of the pancakes

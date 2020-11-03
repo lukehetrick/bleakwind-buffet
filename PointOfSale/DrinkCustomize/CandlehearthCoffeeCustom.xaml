@@ -43,9 +43,9 @@
         </TextBlock>
 
         <StackPanel Name="sizeButtons" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">
-            <RadioButton Name="sizeButtons" GroupName="Sizes" FontSize="16" IsChecked="{Binding Path=Size}">Small</RadioButton>
-            <RadioButton GroupName="Sizes" FontSize="16">Medium</RadioButton>
-            <RadioButton GroupName="Sizes" FontSize="16">Large</RadioButton>
+            <RadioButton GroupName="RadioSizes" FontSize="16" IsChecked="{Binding Path=Size}">Small</RadioButton>
+            <RadioButton GroupName="RadioSizes" FontSize="16">Medium</RadioButton>
+            <RadioButton GroupName="RadioSizes" FontSize="16">Large</RadioButton>
         </StackPanel>
 
 

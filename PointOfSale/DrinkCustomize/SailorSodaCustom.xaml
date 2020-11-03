@@ -26,7 +26,7 @@
         </TextBlock>
 
         <!--List of poperties for the Entree-->
-        <CheckBox Name="iceCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Ice">
+        <CheckBox Name="iceCheck" Grid.Row="1" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Path=Ice}">
             Ice
         </CheckBox>
 

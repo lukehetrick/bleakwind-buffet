@@ -16,7 +16,14 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public class DoubleDraugr : Entree, IOrderItem, INotifyPropertyChanged
     {
-        
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Double Draugr";
+        }
+
         /// <value>
         /// price of the burger
         /// </value>

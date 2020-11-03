@@ -40,5 +40,10 @@ namespace BleakwindBuffet.Data.Entrees
         /// special instructions to prepare the entree
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Property that returns the name of the drink
+        /// </summary>
+        public abstract string Name { get; }
     }
 }

@@ -15,6 +15,14 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>
     public class MadOtarGrits : Side, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Mad Otar Grits";
+        }
+
         /// <value>
         /// the get for the price of the grits
         /// depends on the size

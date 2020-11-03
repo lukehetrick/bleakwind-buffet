@@ -14,7 +14,15 @@ namespace BleakwindBuffet.Data.Entrees
     /// class to define the Smokehouse skeleton breakfast combo. Inherits Entree class
     /// </summary>
     public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged
-    {        
+    {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Smokehouse Skeleton";
+        }
+
         /// <value>
         /// price of the combo
         /// </value>

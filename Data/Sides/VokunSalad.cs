@@ -15,6 +15,14 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>
     public class VokunSalad : Side, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Vokun Salad";
+        }
+
         /// <value>
         /// the get for the price of the salad
         /// depends on the size

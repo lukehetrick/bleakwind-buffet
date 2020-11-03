@@ -30,10 +30,10 @@
             Size:
         </TextBlock>
 
-        <StackPanel Grid.Row="2" Grid.Column="1" >
-            <RadioButton Name="sizeButtons" GroupName="Size" FontSize="16" IsChecked="True">Small</RadioButton>
-            <RadioButton GroupName="Size" FontSize="16">Medium</RadioButton>
-            <RadioButton GroupName="Size" FontSize="16">Large</RadioButton>
+        <StackPanel Grid.Row="2" Grid.Column="1"  >
+            <RadioButton Name="sizeButtons" GroupName="Size" FontSize="16" IsChecked="{Binding Path=Size}">Small</RadioButton>
+            <RadioButton GroupName="Size" FontSize="16" IsChecked="{Binding Path=Size}">Medium</RadioButton>
+            <RadioButton GroupName="Size" FontSize="16" IsChecked="{Binding Path=Size}">Large</RadioButton>
         </StackPanel>
 
         <!--finish and add to order button-->

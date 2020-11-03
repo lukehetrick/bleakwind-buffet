@@ -28,8 +28,7 @@ namespace PointOfSale.SideCustomize
         {
             InitializeComponent();
             order = o;
-            this.DataContext = side;
-            sizeButtons.DataContext = side.Size;
+            this.DataContext = side;            
         }
 
         /// <summary>

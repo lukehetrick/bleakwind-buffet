@@ -15,7 +15,15 @@ namespace BleakwindBuffet.Data.Entrees
     /// class to define hte Philly poacher sandwich. Inherits Entree class
     /// </summary>
     public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged
-    {       
+    {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Philly Poacher";
+        }
+
         /// <value>
         /// price of the sandwich
         /// </value>

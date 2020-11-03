@@ -22,17 +22,14 @@ namespace PointOfSale.DrinkCustomize
     /// </summary>
     public partial class CandlehearthCoffeeCustom : UserControl
     {
-        CandlehearthCoffee coffee = new CandlehearthCoffee();
+        
         OrderComponent order;
         public CandlehearthCoffeeCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
-            this.DataContext = coffee;
-            decafCheck.DataContext = coffee.Decaf;
-            iceCheck.DataContext = coffee.Decaf;
-            creamCheck.DataContext = coffee.Decaf;
-            sizeButtons.DataContext = coffee.Size;
+            CandlehearthCoffee coffee = new CandlehearthCoffee();
+            this.DataContext = coffee;                        
         }
 
         /// <summary>

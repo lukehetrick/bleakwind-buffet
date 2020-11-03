@@ -16,6 +16,13 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class ArentinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Arentino Apple Juice";
+        }
 
         /// <value>
         /// the get for the price of the drink

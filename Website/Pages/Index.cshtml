@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Bleakwind Buffet</h1>
+    <p>
+        We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from
+        the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our
+        old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the
+        mighty Thalmor Triple Burger! You've had a hard adventure and earned your loot, so spend it with us!
+    </p>
+</div>
+
+<p> Any Entree, Side, and Drink can be combined into a combo with a $1 discount!</p>
+
+<h2>Entrees</h2>
+@foreach (BleakwindBuffet.Data.IOrderItem entree in BleakwindBuffet.Data.Menu.Entrees())
+{
+    <div>
+        <div class="name">@entree.Name</div>
+        <div class="price">Price: $@entree.Price</div>
+        <div class="calories">Calories: @entree.Calories</div>
+    </div>
+}
+
+
+<h2>Sides</h2>
+@foreach (BleakwindBuffet.Data.IOrderItem side in BleakwindBuffet.Data.Menu.Sides())
+{
+    <div class="name">@side.ToString()</div>        
+    <div class="price">Price: $@side.Price</div>
+    <div class="calories">Calories: @side.Calories</div>
+}
+
+<h2>Drinks</h2>
+@foreach (BleakwindBuffet.Data.IOrderItem drink in BleakwindBuffet.Data.Menu.Drinks())
+{
+        <div class="name">@drink.ToString()</div>
+        <div class="price">Price: $@drink.Price</div>
+        <div class="calories">Calories: @drink.Calories</div>
+        @if (drink is BleakwindBuffet.Data.Drinks.SailorSoda)
+        {
+            <div class="flavors">Flavors: </div>
+            @foreach (BleakwindBuffet.Data.Enums.SodaFlavor s in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+            {
+                <div class="flavors">@s</div>
+            }
+        }
+}
+
+
+

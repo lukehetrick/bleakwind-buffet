@@ -16,6 +16,14 @@ namespace BleakwindBuffet.Data.Sides
     public class DragonbornWaffleFries : Side, IOrderItem, INotifyPropertyChanged
     {
 
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Dragonborn Waffle Fries";
+        }
+
         /// <value>
         /// the get for the price of the fries
         /// depends on the size

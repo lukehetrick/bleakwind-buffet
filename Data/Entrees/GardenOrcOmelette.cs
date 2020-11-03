@@ -16,7 +16,14 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
-        
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Garden Orc Omelette";
+        }
+
         /// <value>
         /// price of the omelette
         /// </value>

@@ -59,6 +59,9 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
-
+        /// <summary>
+        /// Property that returns the name of the drink
+        /// </summary>
+        public abstract string Name { get; }
     }
 }

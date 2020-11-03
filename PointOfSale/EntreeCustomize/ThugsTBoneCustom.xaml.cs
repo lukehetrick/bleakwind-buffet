@@ -22,13 +22,14 @@ namespace PointOfSale.EntreeCustomize
     /// </summary>
     public partial class ThugsTBoneCustom : UserControl
     {
-        ThugsTBone tbone = new ThugsTBone();
+        
         OrderComponent order;
 
         public ThugsTBoneCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
+            ThugsTBone tbone = new ThugsTBone();
             this.DataContext = tbone;
         }
 

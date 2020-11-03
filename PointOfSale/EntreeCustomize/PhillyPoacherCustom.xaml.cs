@@ -23,14 +23,12 @@ namespace PointOfSale.EntreeCustomize
     public partial class PhillyPoacherCustom : UserControl
     {
         OrderComponent order;
-        PhillyPoacher philly = new PhillyPoacher();
+        
         public PhillyPoacherCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
-            sirloinCheck.DataContext = philly.Sirloin;
-            rollCheck.DataContext = philly.Roll;
-            onionCheck.DataContext = philly.Onion;
+            PhillyPoacher philly = new PhillyPoacher();
             this.DataContext = philly;
         }
 

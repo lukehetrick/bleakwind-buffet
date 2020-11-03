@@ -15,7 +15,15 @@ namespace BleakwindBuffet.Data.Entrees
     /// class to define the thalmore triple burger. Inherits Entree class
     /// </summary>
     public class ThalmoreTriple : Entree, IOrderItem, INotifyPropertyChanged
-    {        
+    {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Thalmor Triple";
+        }
+
         /// <value>
         /// price of the burger
         /// </value>

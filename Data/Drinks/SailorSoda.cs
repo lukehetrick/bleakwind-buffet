@@ -14,7 +14,15 @@ namespace BleakwindBuffet.Data.Drinks
     /// class that defines the Sailor Soda object. Inherits from the Drink class
     /// </summary>
     public class SailorSoda : Drink, IOrderItem, INotifyPropertyChanged
-    {         
+    {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Sailor Soda";
+        }
+
 
         private SodaFlavor flavor = SodaFlavor.Cherry;
         /// <value>

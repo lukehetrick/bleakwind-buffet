@@ -15,6 +15,14 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Warrior Water";
+        }
+
         /// <value>
         /// the get for the price of the drink
         /// free for all sizes

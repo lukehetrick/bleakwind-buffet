@@ -16,7 +16,13 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public class BriarheartBurger : Entree, IOrderItem, INotifyPropertyChanged
     {
-        
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Briarheart Burger";
+        }
 
         /// <value>
         /// price of the burger

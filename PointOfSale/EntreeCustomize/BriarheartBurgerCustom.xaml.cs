@@ -28,12 +28,7 @@ namespace PointOfSale.EntreeCustomize
         public BriarheartBurgerCustom(OrderComponent o)
         {
             InitializeComponent();
-            BriarheartBurger burger = new BriarheartBurger();
-            bunCheck.DataContext = burger.Bun;
-            mustardCheck.DataContext = burger.Mustard;
-            pickleCheck.DataContext = burger.Pickle;
-            cheeseCheck.DataContext = burger.Cheese;
-            ketchupCheck.DataContext = burger.Ketchup;
+            BriarheartBurger burger = new BriarheartBurger();            
             this.DataContext = burger;
             order = o;
         }

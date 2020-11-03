@@ -15,7 +15,16 @@ namespace BleakwindBuffet.Data.Entrees
     /// class to define the Thugs T-bone. Inherits Entree class
     /// </summary>
     public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged
-    {     
+    {
+
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Thugs T-Bone";
+        }
+
         /// <value>
         /// price of the T-Bone
         /// </value>

@@ -23,15 +23,12 @@ namespace PointOfSale.EntreeCustomize
     public partial class SmokehouseSkeletonCustom : UserControl
     {
         OrderComponent order;
-        SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+       
         public SmokehouseSkeletonCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
-            pancakeCheck.DataContext = skeleton.Pancake;
-            HashbrownCheck.DataContext = skeleton.HashBrowns;
-            EggCheck.DataContext = skeleton.Egg;
-            sasaugeLinkCheck.DataContext = skeleton.SausageLink;
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();            
             this.DataContext = skeleton;
 
         }

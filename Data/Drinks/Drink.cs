@@ -31,7 +31,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public virtual Size Size
         {
-            get => size; 
+            get => size;
             set
             {
                 if (size != value)
@@ -85,6 +85,9 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
-        
+        /// <summary>
+        /// Property that returns the name of the drink
+        /// </summary>
+        public abstract string Name { get; }
     }
 }

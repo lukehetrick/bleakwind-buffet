@@ -20,6 +20,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
        // public override event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Candlehearth Coffee";
+        }
+
         /// <value>
         /// the get for the price of the drink
         /// depends on size of drink

@@ -23,15 +23,12 @@ namespace PointOfSale.EntreeCustomize
     public partial class GardenOrcOmeletteCustom : UserControl
     {
         OrderComponent order;
-        GardenOrcOmelette omelette = new GardenOrcOmelette();
+        
         public GardenOrcOmeletteCustom(OrderComponent o)
         {
             InitializeComponent();
             order = o;
-            cheddarCheck.DataContext = omelette.Cheddar;
-            tomatoCheck.DataContext = omelette.Tomato;
-            broccoliCheck.DataContext = omelette.Broccoli;
-            mushroomsCheck.DataContext = omelette.Mushrooms;
+            GardenOrcOmelette omelette = new GardenOrcOmelette();
             this.DataContext = omelette;
         }
 

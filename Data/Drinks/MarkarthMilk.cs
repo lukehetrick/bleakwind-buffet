@@ -15,6 +15,14 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class MarkarthMilk : Drink, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property getter for the private name variable
+        /// </summary>
+        public override string Name
+        {
+            get => "Markarth Milk";
+        }
+
         /// <value>
         /// the get for the price of the drink
         /// depends on size of drink
