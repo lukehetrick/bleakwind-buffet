@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data
 {
@@ -16,6 +17,7 @@ namespace BleakwindBuffet.Data
         /// </summary>
         public virtual event PropertyChangedEventHandler PropertyChanged;
         
+
         private List<string> instructions = new List<string>();
 
         /// <summary>
@@ -25,6 +27,11 @@ namespace BleakwindBuffet.Data
         {
             get => "combo";
         }
+
+        /// <summary>
+        /// describes what category of item this is (Entree, Side or Drink)
+        /// </summary>
+        public string Category => "Combo";
 
         Drink drink;
         Side side;

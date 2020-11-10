@@ -6,11 +6,17 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     public abstract class Entree : IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// describes what category of item this is (Entree, Side or Drink)
+        /// </summary>
+        public string Category => "Entree";
+
         /// <summary>
         /// the property changed event handler for all properties that are changeable
         /// </summary>

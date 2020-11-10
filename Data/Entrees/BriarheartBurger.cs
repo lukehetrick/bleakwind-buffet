@@ -15,7 +15,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// Class for briarheart burger. Inherits Entree class
     /// </summary>
     public class BriarheartBurger : Entree, IOrderItem, INotifyPropertyChanged
-    {
+    {        
         /// <summary>
         /// Property getter for the private name variable
         /// </summary>

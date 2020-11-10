@@ -20,6 +20,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public virtual event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// describes what category of item this is (Entree, Side or Drink)
+        /// </summary>
+        public string Category => "Drink";
+
         protected void NotifyPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

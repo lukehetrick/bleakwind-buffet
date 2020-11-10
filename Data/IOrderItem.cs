@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
+using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data
 {
@@ -37,6 +38,10 @@ namespace BleakwindBuffet.Data
         /// </summary>
         string Name { get; }
 
+        /// <summary>
+        /// describes what category of menu item this is, Entree, Side or Drink
+        /// </summary>
+        string Category { get; }
 
     }
 }
