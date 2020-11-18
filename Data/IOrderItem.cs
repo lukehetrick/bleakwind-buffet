@@ -43,5 +43,10 @@ namespace BleakwindBuffet.Data
         /// </summary>
         string Category { get; }
 
+        /// <summary>
+        /// a description of the menu item
+        /// </summary>
+        string Description { get; }
+
     }
 }

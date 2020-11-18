@@ -16,6 +16,11 @@ namespace BleakwindBuffet.Data.Drinks
     public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
+        /// description of the item
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// the property changed event handler for all properties that are changeable
         /// </summary>
         public virtual event PropertyChangedEventHandler PropertyChanged;

@@ -17,6 +17,11 @@ namespace BleakwindBuffet.Data.Entrees
     public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
+        /// provides a description of the item
+        /// </summary>
+        public override string Description => "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+
+        /// <summary>
         /// Property getter for the private name variable
         /// </summary>
         public override string Name

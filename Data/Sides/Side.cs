@@ -16,6 +16,11 @@ namespace BleakwindBuffet.Data.Sides
     public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
+        /// description of the item
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// describes what category of item this is (Entree, Side or Drink)
         /// </summary>
         public string Category => "Side";

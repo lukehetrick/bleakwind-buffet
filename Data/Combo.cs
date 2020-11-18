@@ -16,7 +16,10 @@ namespace BleakwindBuffet.Data
         /// the property changed event handler for all properties that are changeable
         /// </summary>
         public virtual event PropertyChangedEventHandler PropertyChanged;
-        
+        /// <summary>
+        /// description of the item
+        /// </summary>
+        public string Description => "combo";
 
         private List<string> instructions = new List<string>();
 

@@ -82,7 +82,8 @@ body {
     margin: 0;
 }
 
-.price, .calories, .flavors {
+
+.price, .calories, .flavors, .description {
     color: darkblue;
     font-size: 0.8rem;
     margin: 0;
@@ -111,4 +112,16 @@ form#menu {
 
 #filters h4 {
     margin-bottom: 0.2rem;
+}
+
+/*create 3 columns*/
+.flex-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 490px) {
+    .flex-columns {
+        flex-direction: column;
+    }
 }

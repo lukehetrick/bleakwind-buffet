@@ -16,6 +16,10 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// provides a description of the item
+        /// </summary>
+        public override string Description => "Juicy T-Bone, not much else to say.";
 
         /// <summary>
         /// Property getter for the private name variable
